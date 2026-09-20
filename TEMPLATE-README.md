@@ -158,7 +158,9 @@ paths ending in `/`.
 
 ### `hero` / `artist` — homepage intro content
 
-- `hero`: `background` (path in `public/`), `eyebrow`, `title`, `subtitle`,
+- `hero`: `background` (path in `public/`), `background_alt`, `background_position`
+  (CSS `object-position` for the cover-cropped photo — e.g. `"center 25%"` to
+  show a face near the top of the image), `eyebrow`, `title`, `subtitle`,
   CTA labels. The hero logo comes from `branding.hero_logo`.
 - `artist`: `name`, `tagline`, `portrait` + `portrait_alt`, `bio_heading`,
   `bio` (list of paragraphs), `born`, `birthplace`, `movement`, `bio_years`.
@@ -199,10 +201,30 @@ Section types:
 | `press` | "As Seen On" logo grid from `press` |
 | `studio_products` | Studio prints/merch showcase — **auto-hidden when `studio.products` is empty** |
 | `contact` | Enquiry card from `contact_section` |
+| `faq` | FAQ accordion from the top-level `faq` block (see below) — native `<details>` elements, no JS. Also emits `FAQPage` JSON-LD on the homepage. |
 | `custom` | Generic one-off feature block (see fields above). `image_position`: `"left"` or `"right"`. Optional `cta_label` + `cta_url`. This is how Levoy's Gabriela Hearst section exists without any Levoy-specific code — copy the pattern for any artist-specific story. |
 | `html` | Raw HTML passthrough (`{"type": "html", "html": "..."}`) for true one-offs. Config is trusted; keep it clean. |
 
 Unknown `type` values fail the build with a message listing the valid types.
+
+### `faq` — questions & answers (SEO/AEO)
+
+```json
+"faq": {
+  "eyebrow": "Good to know",
+  "heading": "Frequently Asked Questions",
+  "items": [
+    {"q": "Who is the artist?", "a": "One or two factual sentences."}
+  ]
+}
+```
+
+- Rendered by the `faq` section type; keep answers short and factual —
+  these are written for Google rich results and AI answer engines, which
+  quote direct question/answer pairs.
+- The homepage also gets `FAQPage` JSON-LD plus a `Person` entity for the
+  artist (`sameAs` social/press links), and every build writes `llms.txt`
+  at the site root — a plain-language brief of the site for AI crawlers.
 
 ### `artworks` — the catalogue
 
