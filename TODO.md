@@ -18,6 +18,7 @@ every time something is finished or added — nothing falls through the cracks.
 - [ ] Prepare the exact DNS records for the cutover (only after her approval)
 - [ ] After cutover: verify SSL, levoyexil.com + www.levoyexil.com, redirects, mobile layout, assets, navigation, every enquiry link
 - [ ] Upload the organized project backup to Google Drive + create the project index
+- [x] Drive backup done: "Levoy Exil — Website" folder now holds 01_Code (site.json, build.py, TEMPLATE-README.md, TODO.md), 02_Docs (news article drafts), 03_Assets (asset inventory manifest), and "00 — Project Index" at the root. Single folder confirmed — no duplicate to consolidate.
 - [ ] Clarify the "folder" blue question (favicon vs footer) and match the footer blue to the header if needed
 - [ ] Full mobile + visual acceptance check of the new site
 
