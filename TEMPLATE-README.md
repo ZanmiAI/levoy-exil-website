@@ -202,6 +202,7 @@ Section types:
 | `studio_products` | Studio prints/merch showcase — **auto-hidden when `studio.products` is empty** |
 | `contact` | Enquiry card from `contact_section` |
 | `faq` | FAQ accordion from the top-level `faq` block (see below) — native `<details>` elements, no JS. Also emits `FAQPage` JSON-LD on the homepage. |
+| `news` | News teaser cards from the top-level `news` block (see below), linking to `/news/` and each article page. |
 | `custom` | Generic one-off feature block (see fields above). `image_position`: `"left"` or `"right"`. Optional `cta_label` + `cta_url`. This is how Levoy's Gabriela Hearst section exists without any Levoy-specific code — copy the pattern for any artist-specific story. |
 | `html` | Raw HTML passthrough (`{"type": "html", "html": "..."}`) for true one-offs. Config is trusted; keep it clean. |
 
@@ -225,6 +226,29 @@ Unknown `type` values fail the build with a message listing the valid types.
 - The homepage also gets `FAQPage` JSON-LD plus a `Person` entity for the
   artist (`sameAs` social/press links), and every build writes `llms.txt`
   at the site root — a plain-language brief of the site for AI crawlers.
+
+### `news` — articles (SEO/AEO)
+
+```json
+"news": {
+  "eyebrow": "Stories",
+  "heading": "News",
+  "sub": "Stories from the life and work of the artist.",
+  "articles": [
+    {"slug": "my-story",
+     "title": "Article Title",
+     "date": "2026-09-20",
+     "teaser": "One or two sentences shown on cards and as the meta description.",
+     "body": ["First paragraph.", "Second paragraph."]}
+  ]
+}
+```
+
+- The `news` section type renders teaser cards on the homepage; `/news/` is
+  the index and `/news/{slug}/` is the article page (with `Article` JSON-LD).
+- An empty `body` renders a "Full story coming soon" placeholder — useful
+  for staging titles before the copy is written. `date` is ISO; displayed
+  as "Month D, YYYY".
 
 ### `artworks` — the catalogue
 
