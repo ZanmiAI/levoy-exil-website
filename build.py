@@ -339,7 +339,7 @@ def card_html(a):
 def sec_hero(sec):
     h = CFG["hero"]
     return f"""<section class="hero">
-<div class="hero-bg"><img src="/{esc(h['background'])}" alt="{esc(h.get('background_alt', ''))}" fetchpriority="high"></div>
+<div class="hero-bg"><img src="/{esc(h['background'])}" alt="{esc(h.get('background_alt', ''))}" style="object-position: {esc(h.get('background_position', 'center'))}" fetchpriority="high"></div>
 <div class="wrap hero-inner">
 <img class="hero-logo" src="/{esc(BRANDING.get('hero_logo', ''))}" alt="{esc(BRANDING.get('hero_logo_alt', ARTIST['name']))}" width="92" height="92">
 <p class="eyebrow">{esc(h['eyebrow'])}</p>
