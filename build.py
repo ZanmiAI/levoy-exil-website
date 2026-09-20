@@ -53,6 +53,14 @@ def money(p):
     return f"${p:,}"
 
 
+def fmt_date(iso):
+    y, m, d = (int(x) for x in iso.split("-"))
+    months = ["January", "February", "March", "April", "May", "June",
+              "July", "August", "September", "October", "November",
+              "December"]
+    return f"{months[m - 1]} {d}, {y}"
+
+
 def wa_artwork(title, price):
     text = (f"Hello {ARTIST['name']} Gallery! I'm interested in the original "
             f"painting \u201c{title}\u201d by {ARTIST['name']} ({money(price)}). "
@@ -511,6 +519,30 @@ def sec_faq(sec):
             f'<div class="faq-list">{lis}</div></div></div></section>')
 
 
+def sec_news(sec):
+    """News teaser section, driven by the top-level `news` config block."""
+    n = CFG.get("news", {})
+    articles = n.get("articles", [])
+    if not articles:
+        return ""
+    eyebrow = (f'<p class="eyebrow">{esc(n["eyebrow"])}</p>'
+               if n.get("eyebrow") else "")
+    cards = "".join(
+        f'<a class="news-card" href="/news/{esc(a["slug"])}/">'
+        f'<p class="news-date">{esc(fmt_date(a["date"]))}</p>'
+        f'<h3>{esc(a["title"])}</h3>'
+        f'<p>{esc(a.get("teaser", ""))}</p>'
+        f'<span class="news-more">Read more →</span></a>'
+        for a in articles)
+    return (f'<section class="section"><div class="wrap">'
+            f'{eyebrow}<h2>{esc(n.get("heading", "News"))}</h2>'
+            + (f'<p class="lead">{esc(n["sub"])}</p>' if n.get("sub") else "")
+            + f'<div class="news-grid">{cards}</div>'
+            f'<div class="btn-row center"><a class="btn btn--primary" '
+            f'href="/news/">All stories</a></div>'
+            f'</div></section>')
+
+
 def sec_html(sec):
     """Raw HTML passthrough for true one-offs. Config is trusted."""
     return sec.get("html", "")
@@ -525,6 +557,7 @@ SECTION_RENDERERS = {
     "contact": sec_contact,
     "custom": sec_custom,
     "faq": sec_faq,
+    "news": sec_news,
     "html": sec_html,
 }
 
@@ -662,6 +695,63 @@ def build_exhibitions():
                body, active="/exhibitions/")
 
 
+def article_jsonld(a, path):
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": a["title"],
+        "description": a.get("teaser", ""),
+        "datePublished": a["date"],
+        "author": {"@type": "Person", "name": ARTIST["name"]},
+        "publisher": {"@type": "Organization",
+                      "name": f"{ARTIST['name']} Gallery"},
+        "url": BASE + path,
+        "mainEntityOfPage": BASE + path,
+    }
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, indent=2, ensure_ascii=False) + "\n</script>")
+
+
+def build_news_index():
+    n = CFG.get("news", {})
+    articles = n.get("articles", [])
+    cards = "".join(
+        f'<a class="news-card" href="/news/{esc(a["slug"])}/">'
+        f'<p class="news-date">{esc(fmt_date(a["date"]))}</p>'
+        f'<h3>{esc(a["title"])}</h3>'
+        f'<p>{esc(a.get("teaser", ""))}</p>'
+        f'<span class="news-more">Read more →</span></a>'
+        for a in articles)
+    body = (f'<div class="wrap"><section class="section">'
+            f'<p class="eyebrow">{esc(n.get("eyebrow", "Stories"))}</p>'
+            f'<h1>{esc(n.get("heading", "News"))}</h1>'
+            + (f'<p class="lead">{esc(n["sub"])}</p>' if n.get("sub") else "")
+            + f'<div class="news-grid">{cards}</div>'
+            f'</section></div>')
+    write_page("/news/", f"News — {ARTIST['name']}",
+               f"News and stories from the life and work of {ARTIST['name']}.",
+               body, active="/news/")
+
+
+def build_article(a):
+    path = f"/news/{a['slug']}/"
+    paras = "".join(f"<p>{esc(p)}</p>" for p in a.get("body", []))
+    if not paras:
+        paras = ("<p><em>Full story coming soon — check back shortly.</em></p>")
+    body = (f'<div class="wrap"><section class="section prose">'
+            f'<p class="eyebrow">{esc(fmt_date(a["date"]))}</p>'
+            f'<h1>{esc(a["title"])}</h1>'
+            + (f'<p class="lead">{esc(a["teaser"])}</p>'
+               if a.get("teaser") else "")
+            + paras
+            + f'<p><a href="/news/">← All stories</a></p>'
+            f'</section></div>')
+    write_page(path, f"{a['title']} — {ARTIST['name']}",
+               a.get("teaser") or f"{a['title']} — {ARTIST['name']}",
+               body, active="/news/",
+               extra_head=article_jsonld(a, path))
+
+
 def build_prose(page_key, path, active):
     p = CFG["pages"][page_key]
     secs = "".join(
@@ -771,6 +861,9 @@ def build_pages():
     build_home()
     build_gallery()
     build_exhibitions()
+    build_news_index()
+    for a in CFG.get("news", {}).get("articles", []):
+        build_article(a)
     build_prose("privacy", "/privacy/", "/privacy/")
     build_prose("delivery", "/delivery-returns/", "/delivery-returns/")
     arts = CFG["artworks"]
@@ -785,9 +878,11 @@ def build_pages():
 
 # ------------------------------------------------------ sitemap/robots ---
 def write_sitemap():
-    urls = ["/", "/gallery/", "/exhibitions/", "/privacy/",
+    urls = ["/", "/gallery/", "/exhibitions/", "/news/", "/privacy/",
             "/delivery-returns/"]
     urls += [f"/artwork/{a['slug']}/" for a in CFG["artworks"]]
+    urls += [f"/news/{a['slug']}/"
+             for a in CFG.get("news", {}).get("articles", [])]
     items = "\n".join(
         f"  <url><loc>{BASE}{u}</loc><lastmod>{BUILD_DATE}</lastmod></url>"
         for u in urls)
@@ -958,9 +1053,11 @@ def validate():
           f"{bad_ld[:4]}")
 
     sm_path = os.path.join(OUT, "sitemap.xml")
+    n_expected = (6 + len(CFG["artworks"])
+                  + len(CFG.get("news", {}).get("articles", [])))
     sm_ok = (os.path.exists(sm_path)
              and open(sm_path, encoding="utf-8").read().count("<loc>")
-             == 5 + len(CFG["artworks"]))
+             == n_expected)
     check("sitemap.xml lists every page", sm_ok)
     check("robots.txt present",
           os.path.exists(os.path.join(OUT, "robots.txt")))
@@ -975,6 +1072,16 @@ def validate():
     check("FAQPage JSON-LD on homepage", '"@type": "FAQPage"' in home)
     check("Person JSON-LD on homepage", '"@type": "Person"' in home
           and '"birthDate": "1944-10-19"' in home)
+
+    news_pages = {k: v for k, v in html_pages.items()
+                  if k.startswith("news/") and k != os.path.join("news", "index.html")}
+    n_articles = len(CFG.get("news", {}).get("articles", []))
+    check("news article pages generated", len(news_pages) == n_articles,
+          f"found {len(news_pages)}")
+    check("Article JSON-LD on every news page",
+          all('"@type": "Article"' in v for v in news_pages.values()))
+    check("news index page exists",
+          os.path.join("news", "index.html") in html_pages)
 
     print()
     if failures:
