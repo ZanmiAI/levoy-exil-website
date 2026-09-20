@@ -131,6 +131,7 @@
        "cta_label": "Read the Rain Magazine feature",
        "cta_url": "https://rain-mag.com/stepping-into-gabriela-hearsts-dreamy-spring-2024-vision-a-journey-beyond-the-veil/"},
       {"type": "studio_products"},
+      {"type": "faq"},
       {"type": "contact"}
     ]
   },
@@ -142,6 +143,22 @@
   "contact_section": {
     "heading": "Enquire About an Original",
     "text": "Every painting on this site is an original by Levoy Exil. To purchase or ask about a piece, message the gallery on WhatsApp or by email — we reply Monday to Saturday, 8 AM–8 PM EST."
+  },
+  "faq": {
+    "eyebrow": "Good to know",
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {"q": "Who is Levoy Exil?",
+       "a": "Levoy Exil (born October 19, 1944, in Soissons-la-Montagne Fermathe, Haiti) is a renowned Haitian painter and a pivotal figure of the Saint Soleil art movement, which he joined in 1973. His work is held in collections worldwide and has been exhibited across Haiti, the Americas, and Europe for five decades."},
+      {"q": "What is the Saint Soleil movement?",
+       "a": "Saint Soleil is a Haitian art movement born in 1973 from workshops initiated by the artist Tiga (Jean-Claude Garoute). It empowered mountain-dwelling peasants with no prior art exposure to paint spirituality and dreams. The French writer André Malraux devoted a chapter of his final book, “L’Intemporel,” to the movement — with a Levoy Exil painting on the cover."},
+      {"q": "What inspires Levoy Exil’s paintings?",
+       "a": "Haitian heritage and spirituality: Vodou spirits (loas), vivid dreams, suns, celestial bodies, and sacred geometry. Working in pointillism, he builds intricate compositions of eyes, limbs, hair, and serpentine forms that pulse with rhythmic, mystical energy."},
+      {"q": "What was the Gabriela Hearst collaboration?",
+       "a": "In 2023, Exil’s masterpiece “Solrou: The Sun’s creates Unity” became the wellspring of Gabriela Hearst’s Spring Summer 2024 collection, shown at New York Fashion Week. Crafted with 31 artisans over 5,000+ hours, the collection carried his suns, spirits, and sacred geometry from the mountains of Fermathe to the world stage."},
+      {"q": "How do I buy an original Levoy Exil painting?",
+       "a": "There is no online checkout. Choose a painting and enquire via WhatsApp at +509 3424-9786 or by email at levoyexilgallery@gmail.com, naming the piece. The gallery confirms availability and arranges payment and shipping with you directly. Sold works stay visible and can also be enquired about."}
+    ]
   },
   "pages": {
     "privacy": {
