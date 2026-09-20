@@ -708,6 +708,8 @@ def article_jsonld(a, path):
         "url": BASE + path,
         "mainEntityOfPage": BASE + path,
     }
+    if a.get("image"):
+        data["image"] = BASE + "/" + a["image"]["src"].lstrip("/")
     return ('<script type="application/ld+json">\n'
             + json.dumps(data, indent=2, ensure_ascii=False) + "\n</script>")
 
@@ -733,16 +735,40 @@ def build_news_index():
                body, active="/news/")
 
 
+def news_figure(img):
+    """Render a <figure> for a news article image block."""
+    inner = (f'<img src="/{esc(img["src"])}" alt="{esc(img.get("alt", ""))}"'
+             f' loading="lazy">')
+    if img.get("link"):
+        inner = f'<a href="{esc(img["link"])}">{inner}</a>'
+    caption = (f'<figcaption>{esc(img["caption"])}</figcaption>'
+               if img.get("caption") else "")
+    return f'<figure class="article-figure">{inner}{caption}</figure>'
+
+
+def news_block(b):
+    """Render one news article body block: paragraph string, {"h2": ...}, or {"img": ...}."""
+    if isinstance(b, dict):
+        if "h2" in b:
+            return f'<h2>{esc(b["h2"])}</h2>'
+        if "img" in b:
+            return news_figure(b["img"])
+        return ""
+    return f"<p>{esc(b)}</p>"
+
+
 def build_article(a):
     path = f"/news/{a['slug']}/"
-    paras = "".join(f"<p>{esc(p)}</p>" for p in a.get("body", []))
+    paras = "".join(news_block(b) for b in a.get("body", []))
     if not paras:
         paras = ("<p><em>Full story coming soon — check back shortly.</em></p>")
+    hero = news_figure(a["image"]) if a.get("image") else ""
     body = (f'<div class="wrap"><section class="section prose">'
             f'<p class="eyebrow">{esc(fmt_date(a["date"]))}</p>'
             f'<h1>{esc(a["title"])}</h1>'
             + (f'<p class="lead">{esc(a["teaser"])}</p>'
                if a.get("teaser") else "")
+            + hero
             + paras
             + f'<p><a href="/news/">← All stories</a></p>'
             f'</section></div>')

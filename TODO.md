@@ -8,13 +8,13 @@ every time something is finished or added — nothing falls through the cracks.
 - [ ] Google Business Profile for the gallery (after the domain goes live)
 - [ ] Google Search Console + Bing Webmaster Tools verification (after the domain cutover)
 - [ ] Backlink outreach — ask press outlets and institutions that mention Levoy to link to levoyexil.com
-- [ ] Review and approve the two news article drafts ("Still Painting at 81" and the Gabriela Hearst collaboration)
+- [x] Reviewed and approved both news articles (2026-09-20) — full text published with chosen photos
 - [ ] Approve the domain cutover (DNS switch from WordPress to the new static site)
 - [ ] Send the original Levoy logo source files, if available
 
 ## Zanmi's tasks
 
-- [ ] Write the two news article drafts for Daphnee's review
+- [x] Wrote the two news article drafts for Daphnee's review (approved 2026-09-20)
 - [ ] Prepare the exact DNS records for the cutover (only after her approval)
 - [ ] After cutover: verify SSL, levoyexil.com + www.levoyexil.com, redirects, mobile layout, assets, navigation, every enquiry link
 - [ ] Upload the organized project backup to Google Drive + create the project index
@@ -31,4 +31,5 @@ every time something is finished or added — nothing falls through the cracks.
 - [x] Homepage hero repositioned so Levoy's face is visible
 - [x] FAQ section with FAQPage schema, Person entity, llms.txt
 - [x] News section with two article title pages staged ("Still Painting at 81", Hearst collaboration)
+- [x] Both news articles published in full with photos (2026-09-20)
 - [x] Site pushed to GitHub (main + gh-pages preview)
