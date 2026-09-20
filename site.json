@@ -87,6 +87,7 @@
     {"label": "Home", "url": "/"},
     {"label": "Gallery", "url": "/gallery/"},
     {"label": "Exhibitions", "url": "/exhibitions/"},
+    {"label": "News", "url": "/news/"},
     {"label": "Privacy", "url": "/privacy/"},
     {"label": "Delivery & Returns", "url": "/delivery-returns/"}
   ],
@@ -130,6 +131,7 @@
        "video_title": "How the Gabriela Hearst × Levoy Exil partnership was built",
        "cta_label": "Read the Rain Magazine feature",
        "cta_url": "https://rain-mag.com/stepping-into-gabriela-hearsts-dreamy-spring-2024-vision-a-journey-beyond-the-veil/"},
+      {"type": "news"},
       {"type": "studio_products"},
       {"type": "faq"},
       {"type": "contact"}
@@ -139,6 +141,23 @@
     "heading": "Selected Originals",
     "sub": "One-of-a-kind paintings from the gallery — every piece is an original, available for direct enquiry.",
     "artworks": ["soltala", "les-triples-de-shelsy", "trisolfa", "talasolba", "decoumtana", "solcumfam", "rozoun", "besolfame"]
+  },
+  "news": {
+    "eyebrow": "Stories",
+    "heading": "News",
+    "sub": "Stories from the life and work of Levoy Exil.",
+    "articles": [
+      {"slug": "still-painting-at-81",
+       "title": "Still Painting at 81: The Enduring Fire of Levoy Exil",
+       "date": "2026-09-20",
+       "teaser": "Born in 1944, Levoy Exil has painted for over fifty years — and at 81, he still paints, carrying the Saint Soleil spirit from the mountains of Fermathe to the world.",
+       "body": []},
+      {"slug": "gabriela-hearst-collaboration",
+       "title": "From Fermathe to the Runway: Levoy Exil × Gabriela Hearst",
+       "date": "2026-09-20",
+       "teaser": "How “Solrou: The Sun’s creates Unity” traveled from a Haitian mountain studio to the Gabriela Hearst Spring Summer 2024 runway at New York Fashion Week.",
+       "body": []}
+    ]
   },
   "contact_section": {
     "heading": "Enquire About an Original",
