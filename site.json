@@ -64,6 +64,9 @@
   "header_logo_alt": "Levoy Exil logo",
   "hero_logo": "assets/img/site/logo.png",
   "hero_logo_alt": "Levoy Exil logo",
+  "footer_logo": "assets/img/site/wordmark-white.png",
+  "footer_logo_alt": "Levoy Exil logo",
+  "structured_data_logo": "assets/img/site/wordmark-blue.png",
   "favicon": "assets/img/site/favicon-32x32.png"
  },
  "assets": {
@@ -102,12 +105,24 @@
   ],
   "copy_files": [
    {
-    "src": "icon-white-313x313.png",
+    "src": "brand-mark-white.png",
     "dest": "assets/img/site/logo.png"
    },
    {
-    "src": "favicon-32x32.png",
-    "dest": "assets/img/site/favicon-32x32.png"
+    "src": "wordmark-white-640.png",
+    "dest": "assets/img/site/wordmark-white.png"
+   },
+   {
+    "src": "wordmark-blue-640.png",
+    "dest": "assets/img/site/wordmark-blue.png"
+   },
+   {
+    "src": "favicon.ico",
+    "dest": "favicon.ico"
+   },
+   {
+    "src": "apple-touch-icon.png",
+    "dest": "apple-touch-icon.png"
    }
   ]
  },

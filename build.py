@@ -238,7 +238,8 @@ def head(title, description, path="/", og_image=None, og_type="website",
 <meta property="og:url" content="{esc(canonical)}">
 <meta property="og:image" content="{esc(og_img)}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="/{esc(favicon)}">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{google_fonts_url()}" rel="stylesheet">
@@ -284,9 +285,10 @@ def site_footer():
     return f"""<footer class="site-footer">
 <div class="wrap footer-inner">
 <div class="footer-brand">
-<a class="brand" href="/" aria-label="{esc(ARTIST['name'])} — home">
-<span><span class="brand-name">{esc(ARTIST['name'])}</span><br><span class="brand-sub">{esc(ARTIST['tagline'])}</span></span>
+<a class="footer-logo" href="/" aria-label="{esc(ARTIST['name'])} — home">
+<img src="/{esc(BRANDING.get('footer_logo', ''))}" alt="{esc(BRANDING.get('footer_logo_alt', ARTIST['name'] + ' logo'))}" width="220" height="54">
 </a>
+<p class="brand-sub">{esc(ARTIST['tagline'])}</p>
 <p>{esc(SITE['description'])}</p>
 </div>
 <nav class="footer-nav" aria-label="Footer navigation">
@@ -584,7 +586,7 @@ def org_jsonld():
         "@type": "Organization",
         "name": f"{ARTIST['name']} Gallery",
         "url": BASE + "/",
-        "logo": BASE + "/" + BRANDING.get("header_logo", ""),
+        "logo": BASE + "/" + BRANDING.get("structured_data_logo", BRANDING.get("header_logo", "")),
         "sameAs": [CONTACT[k] for k in ("facebook", "instagram", "youtube")
                    if CONTACT.get(k)],
     }
