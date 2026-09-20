@@ -490,6 +490,27 @@ def sec_custom(sec):
 </div></section>"""
 
 
+def sec_faq(sec):
+    """FAQ section, driven by the top-level `faq` config block.
+
+    Renders native <details>/<summary> accordions (no JS needed) and pairs
+    with the FAQPage JSON-LD emitted on the homepage.
+    """
+    f = CFG.get("faq", {})
+    items = f.get("items", [])
+    if not items:
+        return ""
+    eyebrow = (f'<p class="eyebrow">{esc(f["eyebrow"])}</p>'
+               if f.get("eyebrow") else "")
+    lis = "".join(
+        f'<details class="faq-item"><summary>{esc(i["q"])}</summary>'
+        f'<div class="faq-a"><p>{esc(i["a"])}</p></div></details>'
+        for i in items)
+    return (f'<section class="section" id="faq"><div class="wrap"><div class="faq-wrap">'
+            f'{eyebrow}<h2>{esc(f.get("heading", "Frequently Asked Questions"))}</h2>'
+            f'<div class="faq-list">{lis}</div></div></div></section>')
+
+
 def sec_html(sec):
     """Raw HTML passthrough for true one-offs. Config is trusted."""
     return sec.get("html", "")
@@ -503,6 +524,7 @@ SECTION_RENDERERS = {
     "press": sec_press,
     "contact": sec_contact,
     "custom": sec_custom,
+    "faq": sec_faq,
     "html": sec_html,
 }
 
@@ -537,10 +559,52 @@ def org_jsonld():
             + json.dumps(data, indent=2, ensure_ascii=False) + "\n</script>")
 
 
+def person_jsonld():
+    """Artist as a schema.org Person — identity signals for SEO/AEO."""
+    same = [CONTACT[k] for k in ("facebook", "instagram", "youtube")
+            if CONTACT.get(k)]
+    same.append("https://art.state.gov/personnel/levoy_exil")
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": ARTIST["name"],
+        "birthDate": "1944-10-19",
+        "birthPlace": ARTIST["birthplace"],
+        "nationality": "Haitian",
+        "jobTitle": "Painter",
+        "description": SITE["description"],
+        "url": BASE + "/",
+        "image": BASE + "/" + ARTIST["portrait"],
+        "sameAs": same,
+        "knowsAbout": ["Saint Soleil", "Haitian art", "Vodou art",
+                        "Haitian painting"],
+    }
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, indent=2, ensure_ascii=False) + "\n</script>")
+
+
+def faq_jsonld():
+    """FAQPage schema — feeds Google rich results and answer engines."""
+    items = CFG.get("faq", {}).get("items", [])
+    if not items:
+        return ""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": i["q"],
+             "acceptedAnswer": {"@type": "Answer", "text": i["a"]}}
+            for i in items
+        ],
+    }
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, indent=2, ensure_ascii=False) + "\n</script>")
+
+
 def build_home():
     body = render_sections(CFG["homepage"]["sections"])
     write_page("/", SITE["title"], SITE["description"], body, active="/",
-               extra_head=org_jsonld())
+               extra_head=org_jsonld() + person_jsonld() + faq_jsonld())
 
 
 def build_gallery():
@@ -740,6 +804,53 @@ def write_robots():
     print("  robots.txt")
 
 
+def write_llms_txt():
+    """llms.txt — a plain-language brief of the site for AI crawlers (AEO)."""
+    n = len(CFG["artworks"])
+    n_in = sum(1 for a in CFG["artworks"] if a["availability"] == "in")
+    lines = [
+        f"# {ARTIST['name']}",
+        "",
+        f"> {SITE['description']}",
+        "",
+        "## Key facts",
+        f"- Born {ARTIST['born']} in {ARTIST['birthplace']}.",
+        "- Renowned Haitian painter; pivotal figure of the Saint Soleil "
+        "art movement since 1973.",
+        "- Paints Haitian spirituality in pointillism: Vodou spirits (loas), "
+        "suns, dreams, and sacred geometry.",
+        "- In 2023 his “Solrou: The Sun’s creates Unity” inspired Gabriela "
+        "Hearst’s Spring Summer 2024 collection (New York Fashion Week).",
+        f"- {len(CFG['exhibitions'])} exhibitions listed, 1972–2023.",
+        "",
+        "## The collection",
+        f"- {n} original acrylic paintings on this site ({n_in} available, "
+        "sold works remain visible).",
+        "- Gallery (all works): " + BASE + "/gallery/",
+        "- Exhibition history: " + BASE + "/exhibitions/",
+        "- Frequently asked questions: " + BASE + "/#faq",
+        "",
+        "## Buying an original",
+        "- There is no online checkout. Every piece is a one-of-a-kind "
+        "original sold through direct enquiry.",
+        f"- WhatsApp: {CONTACT['whatsapp_display']} "
+        f"({CONTACT['whatsapp_base']})",
+        f"- Email: {CONTACT['email']}",
+        f"- Hours: {CONTACT['hours']}.",
+        "",
+        "## Official links",
+        f"- Website: {BASE}/",
+        f"- Instagram: {CONTACT['instagram']}",
+        f"- Facebook: {CONTACT['facebook']}",
+        f"- YouTube: {CONTACT['youtube']}",
+        "- U.S. Department of State — Art in Embassies: "
+        "https://art.state.gov/personnel/levoy_exil",
+        "",
+    ]
+    write_out("llms.txt", "\n".join(lines))
+    print("  llms.txt")
+
+
 # ----------------------------------------------------------- validate ---
 def validate():
     failures = []
@@ -853,6 +964,17 @@ def validate():
     check("sitemap.xml lists every page", sm_ok)
     check("robots.txt present",
           os.path.exists(os.path.join(OUT, "robots.txt")))
+    check("llms.txt present",
+          os.path.exists(os.path.join(OUT, "llms.txt")))
+
+    home = html_pages.get("index.html", "")
+    n_faq = len(CFG.get("faq", {}).get("items", []))
+    check("FAQ section rendered on homepage",
+          home.count('class="faq-item"') == n_faq and n_faq > 0,
+          f"found {home.count('class=\"faq-item\"')} items")
+    check("FAQPage JSON-LD on homepage", '"@type": "FAQPage"' in home)
+    check("Person JSON-LD on homepage", '"@type": "Person"' in home
+          and '"birthDate": "1944-10-19"' in home)
 
     print()
     if failures:
@@ -876,6 +998,7 @@ def main():
     build_pages()
     write_sitemap()
     write_robots()
+    write_llms_txt()
     print("\nValidating...")
     validate()
     print(f"\nDone. Deploy the '{os.path.basename(OUT)}/' folder as-is.")
