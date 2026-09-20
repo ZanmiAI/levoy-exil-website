@@ -2,6 +2,7 @@
    Zanmi Studio — Artist Site Template · main.js
    - Mobile navigation toggle
    - Gallery availability filtering
+   - Click-to-play video facades (custom sections)
    - Studio products showcase auto-hide (empty => hidden)
    ============================================================ */
 (function () {
@@ -42,6 +43,24 @@
       });
     });
   }
+
+  /* ---- Click-to-play video facades (custom sections) ----
+     The thumbnail image swaps in a privacy-enhanced YouTube embed
+     only after the visitor taps play. */
+  document.querySelectorAll(".video-facade").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = btn.getAttribute("data-youtube-id");
+      if (!id) return;
+      var frame = document.createElement("iframe");
+      frame.src = "https://www.youtube-nocookie.com/embed/" +
+        encodeURIComponent(id) + "?autoplay=1&rel=0";
+      frame.title = btn.getAttribute("aria-label") || "Video";
+      frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      frame.allowFullscreen = true;
+      frame.className = "video-frame";
+      btn.replaceWith(frame);
+    });
+  });
 
   /* ---- Studio products showcase: hide when empty ----
      The static generator omits this section when the product list

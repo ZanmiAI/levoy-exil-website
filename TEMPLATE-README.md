@@ -22,6 +22,21 @@ templated:
    artwork catalogue, exhibitions, press, and Studio products all live in
    `site.json`.
 
+## Design system rule (decided 2026-09-20)
+
+**Warm beige backgrounds are the constant; the accent color is the artist's.**
+
+- The page background (`theme.colors.paper`, `#fbf7ef`) and tinted sections
+  (`theme.colors.sand_light`, `#f6ead3`) stay beige on **every** artist site.
+  This warm beige is the Zanmi Studio signature — visitors should feel the
+  family resemblance across artists.
+- Each artist chooses **one** accent color of their own to replace the deep
+  blue (`theme.colors.primary`, currently `#0e3c79` for Levoy). Set it — and
+  its darker hover shade (`primary_deep`) — in `site.json`; the header,
+  buttons, links, and highlights follow automatically.
+- Keep `accent`/`accent_deep` (terracotta) and `ink` as supporting tones
+  unless the artist's palette demands otherwise.
+
 ## Launching a new artist site
 
 ```bash

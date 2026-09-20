@@ -453,7 +453,9 @@ def sec_custom(sec):
 
     Fields: heading (required), eyebrow, image, image_alt,
     image_position ("left"|"right"), paragraphs (list),
-    cta_label + cta_url (optional).
+    cta_label + cta_url (optional),
+    video_youtube_id + video_title (optional — renders the image as a
+    click-to-play thumbnail that swaps in a YouTube embed).
     """
     heading = sec.get("heading") or sec.get("id", "Featured")
     eyebrow = (f'<p class="eyebrow">{esc(sec["eyebrow"])}</p>'
@@ -461,11 +463,23 @@ def sec_custom(sec):
     paras = "".join(f"<p>{esc(p)}</p>" for p in sec.get("paragraphs", []))
     cta = ""
     if sec.get("cta_label") and sec.get("cta_url"):
-        cta = (f'<div class="btn-row"><a class="btn btn--light" '
-               f'href="{esc(sec["cta_url"])}">{esc(sec["cta_label"])}</a></div>')
+        cta = (f'<div class="btn-row"><a class="btn btn--primary" '
+               f'href="{esc(sec["cta_url"])}" target="_blank" rel="noopener">'
+               f'{esc(sec["cta_label"])}</a></div>')
     flip = " feature--img-right" if sec.get("image_position") == "right" else ""
     media = ""
-    if sec.get("image"):
+    yt = (sec.get("video_youtube_id") or "").strip()
+    if yt and sec.get("image"):
+        label = sec.get("video_title") or sec.get("heading", "video")
+        media = (
+            f'<div class="feature-media">'
+            f'<button type="button" class="video-facade" data-youtube-id="{esc(yt)}" '
+            f'aria-label="Play video: {esc(label)}">'
+            f'<img src="/{esc(sec["image"])}" '
+            f'alt="{esc(sec.get("image_alt", ""))}" loading="lazy">'
+            f'<span class="video-play" aria-hidden="true"></span>'
+            f'</button></div>')
+    elif sec.get("image"):
         media = (f'<div class="feature-media"><img src="/{esc(sec["image"])}" '
                  f'alt="{esc(sec.get("image_alt", ""))}" loading="lazy"></div>')
     return f"""<section class="section"><div class="wrap">
