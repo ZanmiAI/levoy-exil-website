@@ -271,3 +271,28 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
   width: 100%; aspect-ratio: 16 / 9; border: 0;
   border-radius: 14px; box-shadow: 0 12px 34px rgba(20, 30, 60, .18);
 }
+
+/* ---- FAQ (details/summary accordions) ---- */
+.faq-wrap { max-width: 780px; margin: 0 auto; }
+.faq-wrap > .eyebrow, .faq-wrap > h2 { text-align: center; }
+.faq-list { margin-top: 1.6rem; }
+.faq-item {
+  background: #fff; border: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
+  border-radius: 12px; margin-bottom: .7rem; box-shadow: 0 2px 10px rgba(30,25,15,.06);
+}
+.faq-item summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem;
+  padding: 1rem 1.2rem; font-family: var(--font-headings);
+  font-weight: 600; font-size: 1.02rem; color: var(--color-ink);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; flex: none; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--color-sand-light); color: var(--color-primary-deep);
+  font-size: 1.25rem; line-height: 30px; text-align: center; font-weight: 400;
+}
+.faq-item[open] summary::after { content: "–"; }
+.faq-item summary:hover::after { background: var(--color-sand); }
+.faq-a { padding: 0 1.2rem 1.15rem; }
+.faq-a p { margin: 0; }
