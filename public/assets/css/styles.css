@@ -251,7 +251,7 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
   .feature-grid { grid-template-columns: 1.05fr 1fr; }
   .feature--img-right .feature-media { order: 2; }
   .artwork-layout { grid-template-columns: 1.1fr .9fr; }
-  .footer-inner { grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 4rem; }
   .section { padding: 4.5rem 0; }
 }
 @media (max-width: 759px) {
