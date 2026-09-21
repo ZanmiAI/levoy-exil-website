@@ -102,3 +102,21 @@ every time something is finished or added — nothing falls through the cracks.
   03_Assets > "Press logos" (new subfolder).
 - Includes the corrected black Vogue and WWD mastheads.
 - Skipped press-generic-225x225.png (retired placeholder, no longer used).
+
+## 2026-09-21 ~01:15 AM ET — lifestyle "in a home" photos restored (Daphnee's catch)
+- Daphnee noticed the old WordPress site showed framed "how it looks in a home"
+  photos that hadn't been carried over. Confirmed: 9 such photos existed in the
+  migration inventory (*-gallery-frame.png/jpg) but were wired into ZERO artwork
+  pages on the new site.
+- Added `lifestyle_image` to the 8 artworks that have one (alfasum, columbasol,
+  desolfam, falcumda, fasolcum, kosollumba, solcuma, soldalum; solcuma had two
+  variants — kept solcuma-gallery-frame.png). build.py now generates
+  `<slug>-lifestyle.jpg` (max 1200px) and each artwork page renders it under the
+  main photo with caption "In your home — a framed display of <Title>" and a
+  descriptive alt attribute. New `.artwork-lifestyle` CSS in styles.css.
+- Rebuilt, all validation checks passed, synced public/ -> preview_public/,
+  pushed main 3bf341f / gh-pages 3b52e17; live-verified the Soldalum page +
+  image URL on the preview site.
+- NOTE for cutover: the production build in /tmp/levoy-prod predates this change
+  and must be REGENERATED from the current build at cutover time (after DNS
+  approval), so the lifestyle photos go live on levoyexil.com too.
