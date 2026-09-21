@@ -134,3 +134,6 @@ every time something is finished or added — nothing falls through the cracks.
   their own "Information" column next to "Explore" in the footer for prominence. Footer
   grid is now 4 columns on desktop; stacks on mobile. Pushed main + gh-pages 8926237,
   live-verified both columns on preview.
+- [x] Footer spacing fix (2026-09-21): per Daphnee — all four footer columns now equal
+  width (1fr each) with a consistent 2.5rem column gap, so Explore no longer sits
+  close to the brand column. Pushed main + gh-pages fa30700, live-verified the CSS.
