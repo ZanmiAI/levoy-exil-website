@@ -20,6 +20,7 @@ every time something is finished or added — nothing falls through the cracks.
 - [ ] Upload the organized project backup to Google Drive + create the project index
 - [x] Drive backup done: "Levoy Exil — Website" folder now holds 01_Code (site.json, build.py, TEMPLATE-README.md, TODO.md), 02_Docs (news article drafts), 03_Assets (asset inventory manifest), and "00 — Project Index" at the root. Single folder confirmed — no duplicate to consolidate.
 - [x] Footer blue matched to header (2026-09-20): footer was using the darker `--color-primary-deep` (#0a2c5c) while the header uses the brand blue `--color-primary` (#0e3c79, from the real logo). Changed `.site-footer` to the brand blue. Rebuilt (all checks pass), pushed main fcd1bb3 + gh-pages 47234be.
+- [x] Approved logo + favicon sets installed on the site (2026-09-20): new multi-size favicon.ico + apple-touch-icon.png in `<head>` (replacing the old 32px PNG); header/hero badge upgraded to the crisp new LE mark (1024px); footer brand lockup now shows the real serif wordmark (white); JSON-LD logo now points to the wordmark. All 14 brand files saved in repo `brand/` and Drive 03_Assets. Rebuilt (all checks pass), pushed main cd19d5b + gh-pages 02c6f45 — live on preview.
 - [ ] Full mobile + visual acceptance check of the new site (screenshot review running 2026-09-20 ~6:35 PM ET)
 
 ## Done
