@@ -14,6 +14,7 @@ the config, never this code.
 
 See TEMPLATE-README.md for the full template guide.
 """
+import datetime
 import json
 import os
 import re
@@ -37,8 +38,21 @@ BASE = SITE["base_url"].rstrip("/")
 # subpath ("/levoy-exil-website"); production serves from the domain root, so
 # at cutover set site.json "baseurl" to "" and rebuild.
 BP = SITE.get("baseurl", "").rstrip("/")
-BUILD_DATE = "2026-09-20"
+BUILD_DATE = datetime.date.today().isoformat()
 YEAR = BUILD_DATE.split("-")[0]
+
+
+def published_articles():
+    """Articles whose publish date has arrived (YYYY-MM-DD <= today).
+
+    Powers the twice-monthly publishing schedule: articles are written ahead
+    of time with future dates and only appear on the site (index, homepage
+    teaser, article pages, sitemap) once their date arrives.
+    """
+    arts = [a for a in CFG.get("news", {}).get("articles", [])
+            if a.get("date", "") <= BUILD_DATE]
+    arts.sort(key=lambda a: a.get("date", ""), reverse=True)
+    return arts
 
 # Generated, deployable site lives here (source files stay out of it).
 OUT = os.path.join(ROOT, "public")
@@ -578,7 +592,7 @@ def sec_faq(sec):
 def sec_news(sec):
     """News teaser section, driven by the top-level `news` config block."""
     n = CFG.get("news", {})
-    articles = n.get("articles", [])
+    articles = published_articles()
     if not articles:
         return ""
     eyebrow = (f'<p class="eyebrow">{esc(n["eyebrow"])}</p>'
@@ -772,7 +786,7 @@ def article_jsonld(a, path):
 
 def build_news_index():
     n = CFG.get("news", {})
-    articles = n.get("articles", [])
+    articles = published_articles()
     cards = "".join(
         f'<a class="news-card" href="/news/{esc(a["slug"])}/">'
         f'<p class="news-date">{esc(fmt_date(a["date"]))}</p>'
@@ -1080,7 +1094,7 @@ def build_pages():
     build_gallery()
     build_exhibitions()
     build_news_index()
-    for a in CFG.get("news", {}).get("articles", []):
+    for a in published_articles():
         build_article(a)
     build_press_page()
     build_prose("privacy", "/privacy/", "/privacy/")
@@ -1100,8 +1114,7 @@ def write_sitemap():
     urls = ["/", "/gallery/", "/exhibitions/", "/news/", "/press/", "/privacy/",
             "/delivery-returns/"]
     urls += [f"/artwork/{a['slug']}/" for a in CFG["artworks"]]
-    urls += [f"/news/{a['slug']}/"
-             for a in CFG.get("news", {}).get("articles", [])]
+    urls += [f"/news/{a['slug']}/" for a in published_articles()]
     items = "\n".join(
         f"  <url><loc>{BASE}{u}</loc><lastmod>{BUILD_DATE}</lastmod></url>"
         for u in urls)
@@ -1281,8 +1294,7 @@ def validate():
           f"{bad_ld[:4]}")
 
     sm_path = os.path.join(OUT, "sitemap.xml")
-    n_expected = (7 + len(CFG["artworks"])
-                  + len(CFG.get("news", {}).get("articles", [])))
+    n_expected = (7 + len(CFG["artworks"]) + len(published_articles()))
     sm_ok = (os.path.exists(sm_path)
              and open(sm_path, encoding="utf-8").read().count("<loc>")
              == n_expected)
@@ -1303,7 +1315,7 @@ def validate():
 
     news_pages = {k: v for k, v in html_pages.items()
                   if k.startswith("news/") and k != os.path.join("news", "index.html")}
-    n_articles = len(CFG.get("news", {}).get("articles", []))
+    n_articles = len(published_articles())
     check("news article pages generated", len(news_pages) == n_articles,
           f"found {len(news_pages)}")
     check("Article JSON-LD on every news page",
