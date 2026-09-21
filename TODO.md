@@ -29,13 +29,15 @@ every time something is finished or added — nothing falls through the cracks.
 
 - [x] Static site built (home, gallery, 42 artwork pages, exhibitions, policies, 404, sitemap, robots)
 - [x] Enquiry-first shop: WhatsApp + email on every artwork, sold works visible and enquirable
-- [x] SEO/AEO foundation: unique titles/descriptions, canonicals, Open Graph/Twitter cards, VisualArtwork + Organization JSON-LD, alt text, sitemap
+- [x] SEO/AEO foundation: unique titles/descriptions, canonicals, Open Graph/Twitter cards, VisualArtwork + Organization JSON-LD, alt text, sitemap — audited 2026-09-20 ~11:40 PM ET, all present; added theme-color #0e3c79 meta to every page head
 - [x] Gabriela Hearst section with click-to-play official video + Rain Magazine article link
 - [x] Homepage hero repositioned so Levoy's face is visible
 - [x] FAQ section with FAQPage schema, Person entity, llms.txt
 - [x] News section with two article title pages staged ("Still Painting at 81", Hearst collaboration)
 - [x] Both news articles published in full with photos (2026-09-20)
 - [x] Site pushed to GitHub (main + gh-pages preview)
+- [x] All 17 press cards now show real publication logos (2026-09-20 ~11:45 PM ET): sourced + visually verified 10 missing logos (Fashionista, Grazia, Fashion Network, RAIN, Yahoo News, Kendam, Wikipedia, Nader Haitian Art, Google Arts & Culture, MutualArt); build.py press-logo copy loop now covers press_page groups; main 3140e74 + gh-pages df1217f — live on preview
+- [x] Homepage feature video vertically centered in the blue block (2026-09-20 ~11:45 PM ET)
 
 ## 2026-09-20 ~11:05 PM ET — fixed unstyled preview (Daphnee reported "just writings")
 - Root cause: all internal links used root-relative paths (/assets/...) which 404'd
