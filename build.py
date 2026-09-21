@@ -33,6 +33,10 @@ CONTACT = CFG["contact"]
 STUDIO = CFG["studio"]
 ASSETS = CFG.get("assets", {})
 BASE = SITE["base_url"].rstrip("/")
+# URL prefix for internal links/assets. The GitHub Pages preview lives under a
+# subpath ("/levoy-exil-website"); production serves from the domain root, so
+# at cutover set site.json "baseurl" to "" and rebuild.
+BP = SITE.get("baseurl", "").rstrip("/")
 BUILD_DATE = "2026-09-20"
 YEAR = BUILD_DATE.split("-")[0]
 
@@ -312,7 +316,7 @@ WhatsApp: <a href="{esc(wa_general())}">{esc(CONTACT['whatsapp_display'])}</a><b
 
 def page_html(title, description, body, path="/", active="/", og_image=None,
               og_type="website", extra_head=""):
-    return f"""<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="{esc(SITE.get('lang', 'en'))}">
 {head(title, description, path, og_image, og_type, extra_head)}
 <body>
@@ -324,6 +328,12 @@ def page_html(title, description, body, path="/", active="/", og_image=None,
 </body>
 </html>
 """
+    if BP:
+        # Prefix root-relative internal links so the site works under a
+        # subpath (GitHub Pages preview). Absolute and protocol-relative
+        # URLs are left untouched.
+        html = re.sub(r'(href|src)="(?=/(?!/))', rf'\1="{BP}', html)
+    return html
 
 
 def write_page(path, *args, **kwargs):
@@ -1054,11 +1064,20 @@ def validate():
     check("no cart/checkout wording", m is None,
           f"found {m.group(0)!r}" if m else "")
 
-    refs = set(re.findall(r'''(?:src|href)="/(assets/[^"]+)"''', combined))
+    bp_pat = re.escape(BP) if BP else ""
+    refs = set(re.findall(r'''(?:src|href)="''' + bp_pat + r'''/(assets/[^"]+)"''',
+                          combined))
     missing = sorted(r for r in refs
                      if not os.path.exists(os.path.join(OUT, r)))
     check("every referenced asset exists", not missing,
           f"missing: {missing[:6]}")
+    if BP:
+        bare = [m.group(1) for m in re.finditer(r'''(?:src|href)="(/[^"]*)"''',
+                                                combined)
+                if not m.group(1).startswith(BP + "/")]
+        check("no bare root-relative URLs under subpath deploy", not bare,
+              f"found {len(bare)} (assets would 404 on the preview): "
+              f"{bare[:3]}")
 
     imgs = re.findall(r"<img\b[^>]*>", combined)
     bad = [t[:70] for t in imgs if "alt=" not in t]
