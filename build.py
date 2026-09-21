@@ -737,6 +737,39 @@ def build_news_index():
                body, active="/news/")
 
 
+def build_press_page():
+    pp = CFG.get("press_page", {})
+    groups = pp.get("groups", [])
+    g_html = []
+    for g in groups:
+        items = []
+        for it in g.get("items", []):
+            inner = (f'<p class="press-pub">{esc(it["publication"])}</p>'
+                     f'<h3>{esc(it["title"])}</h3>'
+                     + (f'<p>{esc(it["blurb"])}</p>' if it.get("blurb") else ""))
+            if it.get("url"):
+                items.append(
+                    f'<a class="press-card" href="{esc(it["url"])}" '
+                    f'target="_blank" rel="noopener">{inner}'
+                    f'<span class="news-more">Read the article &#8599;</span></a>')
+            else:
+                items.append(f'<div class="press-card">{inner}</div>')
+        g_html.append(
+            f'<h2 class="press-group-h">{esc(g["heading"])}</h2>'
+            + (f'<p class="lead">{esc(g["sub"])}</p>' if g.get("sub") else "")
+            + f'<div class="press-list">{"".join(items)}</div>')
+    body = (f'<div class="wrap"><section class="section">'
+            f'<p class="eyebrow">{esc(pp.get("eyebrow", "Press"))}</p>'
+            f'<h1>{esc(pp.get("heading", "Press"))}</h1>'
+            + (f'<p class="lead">{esc(pp["sub"])}</p>' if pp.get("sub") else "")
+            + "".join(g_html)
+            + f'</section></div>')
+    write_page("/press/", f"Press — {ARTIST['name']}",
+               f"Press coverage and recognition for {ARTIST['name']}: "
+               f"Vogue, WWD, The New York Times, CNN, and more.",
+               body, active="/press/")
+
+
 def news_figure(img):
     """Render a <figure> for a news article image block."""
     inner = (f'<img src="/{esc(img["src"])}" alt="{esc(img.get("alt", ""))}"'
@@ -892,6 +925,7 @@ def build_pages():
     build_news_index()
     for a in CFG.get("news", {}).get("articles", []):
         build_article(a)
+    build_press_page()
     build_prose("privacy", "/privacy/", "/privacy/")
     build_prose("delivery", "/delivery-returns/", "/delivery-returns/")
     arts = CFG["artworks"]
@@ -906,7 +940,7 @@ def build_pages():
 
 # ------------------------------------------------------ sitemap/robots ---
 def write_sitemap():
-    urls = ["/", "/gallery/", "/exhibitions/", "/news/", "/privacy/",
+    urls = ["/", "/gallery/", "/exhibitions/", "/news/", "/press/", "/privacy/",
             "/delivery-returns/"]
     urls += [f"/artwork/{a['slug']}/" for a in CFG["artworks"]]
     urls += [f"/news/{a['slug']}/"
@@ -1081,7 +1115,7 @@ def validate():
           f"{bad_ld[:4]}")
 
     sm_path = os.path.join(OUT, "sitemap.xml")
-    n_expected = (6 + len(CFG["artworks"])
+    n_expected = (7 + len(CFG["artworks"])
                   + len(CFG.get("news", {}).get("articles", [])))
     sm_ok = (os.path.exists(sm_path)
              and open(sm_path, encoding="utf-8").read().count("<loc>")
@@ -1110,6 +1144,11 @@ def validate():
           all('"@type": "Article"' in v for v in news_pages.values()))
     check("news index page exists",
           os.path.join("news", "index.html") in html_pages)
+    check("press page exists",
+          os.path.join("press", "index.html") in html_pages)
+    press_page = html_pages.get(os.path.join("press", "index.html"), "")
+    check("press page lists Vogue and WWD",
+          "Vogue" in press_page and "WWD" in press_page)
 
     print()
     if failures:
