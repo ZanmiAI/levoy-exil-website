@@ -44,3 +44,10 @@ every time something is finished or added — nothing falls through the cracks.
   prefixes href/src when set. At production cutover set baseurl to "" and rebuild.
 - Validation now fails the build if bare root-relative URLs remain (regression guard).
 - Deployed main 60f4498 / gh-pages a4378b4; live-verified CSS, JS, hero, press, gallery all 200.
+
+## 2026-09-20 ~11:15 PM ET — press page redesigned (Daphnee: "not on brand, just words")
+- Was text-only cards with no visual identity. Redesigned in the site's design language:
+  brand-blue hero band, logo tiles on every card (7 real logos; blue monogram
+  tiles for the rest), featured-story card for the Vogue GH runway review with
+  the Solrou image, group headers with article counts, alternating tinted bands.
+- Deployed main d6ad3f0 / gh-pages 94dd2df; live-verified.

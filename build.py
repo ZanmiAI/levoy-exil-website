@@ -840,12 +840,24 @@ def news_figure(img):
 
 
 def news_block(b):
-    """Render one news article body block: paragraph string, {"h2": ...}, or {"img": ...}."""
+    """Render one news article body block: paragraph string, {"h2": ...},
+    {"img": ...}, or {"video": ...} (click-to-play YouTube facade)."""
     if isinstance(b, dict):
         if "h2" in b:
             return f'<h2>{esc(b["h2"])}</h2>'
         if "img" in b:
             return news_figure(b["img"])
+        if "video" in b:
+            v = b["video"]
+            label = v.get("title") or "video"
+            return (
+                f'<button type="button" class="video-facade article-video" '
+                f'data-youtube-id="{esc(v["youtube_id"])}" '
+                f'aria-label="Play video: {esc(label)}">'
+                f'<img src="/{esc(v["poster"])}" '
+                f'alt="{esc(v.get("poster_alt", ""))}" loading="lazy">'
+                f'<span class="video-play" aria-hidden="true"></span>'
+                f'</button>')
         return ""
     return f"<p>{esc(b)}</p>"
 
