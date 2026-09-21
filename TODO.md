@@ -137,3 +137,7 @@ every time something is finished or added — nothing falls through the cracks.
 - [x] Footer spacing fix (2026-09-21): per Daphnee — all four footer columns now equal
   width (1fr each) with a consistent 2.5rem column gap, so Explore no longer sits
   close to the brand column. Pushed main + gh-pages fa30700, live-verified the CSS.
+- [x] Footer breathing room (2026-09-21): per Daphnee — footer column gap widened from
+  2.5rem to 4rem so the brand column (logo/tagline/description) no longer sits tight
+  against Explore. Columns stay equal width, spacing consistent. Pushed main + gh-pages
+  56d5f44, live-verified the CSS.
