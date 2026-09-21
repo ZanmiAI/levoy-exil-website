@@ -411,3 +411,23 @@ a.press-feature:hover { transform: translateY(-4px); box-shadow: 0 18px 44px col
   .press-feature-media { min-height: 0; aspect-ratio: 16/9; }
   .press-feature-body { padding: 1.6rem; }
 }
+
+/* Runway gallery (news articles) */
+.article-gallery {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+  margin: 30px 0 6px;
+}
+.article-gallery figure {
+  margin: 0; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 12px 34px rgba(20, 30, 60, .16);
+}
+.article-gallery img { display: block; width: 100%; height: auto; }
+.article-gallery figcaption {
+  padding: 10px 14px; font-size: .85rem; color: #41506b; background: #fff;
+}
+.gallery-credit {
+  font-size: .82rem; color: #5a6b85; margin: 10px 0 28px;
+}
+@media (max-width: 640px) {
+  .article-gallery { grid-template-columns: 1fr; }
+}
