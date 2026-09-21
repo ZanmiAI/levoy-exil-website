@@ -44,6 +44,32 @@
     });
   }
 
+  /* ---- Artwork gallery lightbox ----
+     Clicking a "More photos" thumbnail opens the full uncropped photo.
+     Closes on click, the X button, or the Escape key. */
+  document.querySelectorAll(".artwork-gallery-grid img").forEach(function (img) {
+    img.addEventListener("click", function () {
+      var overlay = document.createElement("div");
+      overlay.className = "lightbox";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-label", "Photo enlarged");
+      var full = document.createElement("img");
+      full.src = img.currentSrc || img.src;
+      full.alt = img.alt;
+      var close = document.createElement("button");
+      close.className = "lightbox-close";
+      close.setAttribute("aria-label", "Close");
+      close.innerHTML = "&times;";
+      overlay.appendChild(full);
+      overlay.appendChild(close);
+      function dismiss() { overlay.remove(); document.removeEventListener("keydown", onKey); }
+      function onKey(e) { if (e.key === "Escape") dismiss(); }
+      overlay.addEventListener("click", dismiss);
+      document.addEventListener("keydown", onKey);
+      document.body.appendChild(overlay);
+    });
+  });
+
   /* ---- Click-to-play video facades (custom sections) ----
      The thumbnail image swaps in a privacy-enhanced YouTube embed
      only after the visitor taps play. */
