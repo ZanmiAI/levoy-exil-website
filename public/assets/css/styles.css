@@ -185,9 +185,9 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
 .artwork-gallery { margin-top: 3.2rem; }
 .artwork-gallery h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: .4rem; }
 .artwork-gallery .gallery-sub { color: color-mix(in srgb, var(--color-ink) 72%, transparent); margin-bottom: 1.4rem; }
-.artwork-gallery-grid { columns: 3 240px; column-gap: 1.1rem; }
-.artwork-gallery-grid figure { break-inside: avoid; margin: 0 0 1.1rem; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 12%, transparent); }
-.artwork-gallery-grid img { width: 100%; height: auto; display: block; }
+.artwork-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; }
+.artwork-gallery-grid figure { margin: 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 12%, transparent); display: flex; flex-direction: column; }
+.artwork-gallery-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; display: block; }
 .artwork-gallery-grid figcaption { text-align: center; font-size: .82rem; color: color-mix(in srgb, var(--color-ink) 72%, transparent); padding: .55rem .6rem .7rem; }
 
 /* ---------- Exhibitions ---------- */
