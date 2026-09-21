@@ -1,0 +1,1459 @@
+{
+  "artist": {
+    "name": "Levoy Exil",
+    "tagline": "Renowned Haitian Painter",
+    "born": "October 19, 1944",
+    "birthplace": "Soissons-la-Montagne Fermathe, Haiti",
+    "movement": "Saint Soleil",
+    "portrait": "assets/img/site/portrait.jpg",
+    "portrait_alt": "Portrait of Haitian painter Levoy Exil",
+    "bio_heading": "About the Artist",
+    "bio": [
+      "Levoy Exil, born on October 19, 1944, in Soissons-la-Montagne Fermathe, is a celebrated Haitian artist known for his pivotal role in the Saint Soleil art movement. Beginning his artistic journey in 1972, he joined the Saint Soleil workshops initiated by the renowned artist Tiga in 1973. This groundbreaking experiment empowered mountain-dwelling peasants with no prior exposure to art to explore spirituality and creativity, garnering international attention.",
+      "In 1975, the influential French novelist and art historian André Malraux visited Saint Soleil, recognizing the artists as conduits for spiritual expression. He dedicated a chapter in his final book, “L’Intemporel,” to the Saint Soleil movement, featuring Levoy Exil’s artwork on the cover. Exil actively participated in Saint Soleil exhibits, collaborated on a homage to Malraux, and showcased his work at the World Theater Festival in Nancy, France in 1977.",
+      "Exil’s artistic career transcended borders, captivating audiences worldwide. His art delves deep into Haitian heritage and spirituality, drawing inspiration from Voodoo spirits and vivid dreams. Using Pointillism, he created intricate compositions pulsating with images of Voodoo Loas, celestial bodies, and avian creatures, all infused with rhythmic spirituality. Each brushstroke weaves a narrative of eyes, limbs, hair, and serpentine forms, evoking mystical, abstract energy.",
+      "Characterized by vibrant colors and poetic calligraphy, Exil’s uninhibited style transcends traditional boundaries, evoking powerful emotional responses from collectors and enthusiasts globally. Levoy Exil’s enduring legacy testifies to the fusion of art, spirituality, and cultural identity. His art stands as an everlasting heritage, inspiring artists and admirers worldwide. In 2023, Levoy Exil’s masterpiece “Solrou: The Sun’s creates Unity” served as a profound wellspring of inspiration, giving rise to Gabriela Hearst’s luxurious Spring Summer 2024 collection."
+    ]
+  },
+  "site": {
+    "title": "Levoy Exil | Renowned Haitian Painter — Saint Soleil Movement",
+    "description": "Official site of Levoy Exil, renowned Haitian painter of the Saint Soleil movement. Browse 42 original acrylic paintings, exhibition history, and enquire directly via WhatsApp or email.",
+    "base_url": "https://levoyexil.com",
+    "baseurl": "/levoy-exil-website",
+    "lang": "en"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#0e3c79",
+      "primary_deep": "#0a2c5c",
+      "sand": "#e7ca9e",
+      "sand_light": "#f6ead3",
+      "accent": "#b47b59",
+      "accent_deep": "#96593f",
+      "ink": "#211c15",
+      "paper": "#fbf7ef",
+      "white": "#ffffff"
+    },
+    "fonts": {
+      "headings": {
+        "family": "Raleway",
+        "weights": [
+          400,
+          600,
+          700,
+          800
+        ]
+      },
+      "body": {
+        "family": "Roboto",
+        "weights": [
+          400,
+          500,
+          700
+        ]
+      },
+      "display": {
+        "family": "Barriecito",
+        "weights": [
+          400
+        ]
+      }
+    }
+  },
+  "branding": {
+    "header_logo": "assets/img/site/logo.png",
+    "header_logo_alt": "Levoy Exil logo",
+    "hero_logo": "assets/img/site/logo.png",
+    "hero_logo_alt": "Levoy Exil logo",
+    "footer_logo": "assets/img/site/wordmark-white.png",
+    "footer_logo_alt": "Levoy Exil logo",
+    "structured_data_logo": "assets/img/site/wordmark-blue.png",
+    "favicon": "assets/img/site/favicon-32x32.png"
+  },
+  "assets": {
+    "source_dir": "~/workspace/levoy-exil-migration/assets",
+    "artworks_dir": "products",
+    "site_dir": "site",
+    "artwork_max_side": 1600,
+    "artwork_quality": 82,
+    "thumb_max_side": 600,
+    "thumb_quality": 76,
+    "site_images": [
+      {
+        "src": "hero-background-1701x1000.jpg",
+        "dest": "assets/img/site/hero.jpg",
+        "max_side": 1920,
+        "quality": 80
+      },
+      {
+        "src": "homepage-gabriela-hearst-image-1422x750.jpg",
+        "dest": "assets/img/site/hearst.jpg",
+        "max_side": 1600,
+        "quality": 80
+      },
+      {
+        "src": "artist-portrait-907x1209.jpg",
+        "dest": "assets/img/site/portrait.jpg",
+        "max_side": 1000,
+        "quality": 82
+      },
+      {
+        "src": "artist-with-paintings-2048x761.jpg",
+        "dest": "assets/img/site/artist-with-paintings.jpg",
+        "max_side": 1920,
+        "quality": 80
+      },
+      {
+        "src": "hearst-runway-1.jpg",
+        "dest": "assets/img/site/hearst-runway-1.jpg",
+        "max_side": 1600,
+        "quality": 80
+      },
+      {
+        "src": "hearst-runway-2.jpg",
+        "dest": "assets/img/site/hearst-runway-2.jpg",
+        "max_side": 1600,
+        "quality": 80
+      },
+      {
+        "src": "hearst-runway-3.jpg",
+        "dest": "assets/img/site/hearst-runway-3.jpg",
+        "max_side": 1600,
+        "quality": 80
+      },
+      {
+        "src": "hearst-runway-4.jpg",
+        "dest": "assets/img/site/hearst-runway-4.jpg",
+        "max_side": 1600,
+        "quality": 80
+      }
+    ],
+    "copy_files": [
+      {
+        "src": "brand-mark-white.png",
+        "dest": "assets/img/site/logo.png"
+      },
+      {
+        "src": "wordmark-white-640.png",
+        "dest": "assets/img/site/wordmark-white.png"
+      },
+      {
+        "src": "wordmark-blue-640.png",
+        "dest": "assets/img/site/wordmark-blue.png"
+      },
+      {
+        "src": "favicon.ico",
+        "dest": "favicon.ico"
+      },
+      {
+        "src": "apple-touch-icon.png",
+        "dest": "apple-touch-icon.png"
+      }
+    ]
+  },
+  "contact": {
+    "whatsapp_number": "50934249786",
+    "whatsapp_display": "+509 3424-9786",
+    "whatsapp_base": "https://api.whatsapp.com/send?phone=50934249786",
+    "email": "levoyexilgallery@gmail.com",
+    "facebook": "https://www.facebook.com/dantor.dantor.3",
+    "instagram": "https://www.instagram.com/levoy_exil/",
+    "youtube": "https://www.youtube.com/@levoyexilgallery",
+    "hours": "Monday–Saturday, 8 AM–8 PM EST"
+  },
+  "studio": {
+    "name": "Zanmi Studio",
+    "url": "https://zanmistudio.com",
+    "shop_base_url": "https://zanmistudio.com",
+    "footer_line": "Represented by Zanmi Studio",
+    "products_heading": "Studio Products",
+    "products_sub": "Prints and merchandise featuring Levoy Exil’s artwork — sold exclusively through the Zanmi Studio shop.",
+    "products": []
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Gallery",
+      "url": "/gallery/"
+    },
+    {
+      "label": "Exhibitions",
+      "url": "/exhibitions/"
+    },
+    {
+      "label": "News",
+      "url": "/news/"
+    },
+    {
+      "label": "Press",
+      "url": "/press/"
+    },
+    {
+      "label": "Privacy",
+      "url": "/privacy/"
+    },
+    {
+      "label": "Delivery & Returns",
+      "url": "/delivery-returns/"
+    }
+  ],
+  "hero": {
+    "background": "assets/img/site/hero.jpg",
+    "background_alt": "",
+    "background_position": "center 25%",
+    "eyebrow": "Haitian Master Painter · Saint Soleil Movement",
+    "title": "Levoy Exil",
+    "subtitle": "Renowned Haitian Painter",
+    "cta_gallery": "View the Gallery",
+    "cta_whatsapp": "Enquire on WhatsApp"
+  },
+  "press": {
+    "heading": "As Seen On",
+    "items": [
+      {
+        "name": "Vogue",
+        "logo": "assets/img/press/press-vogue-logo-1200x630.png",
+        "logo_alt": "Vogue",
+        "caption": "Vogue · Gabriela Hearst SS24",
+        "url": "https://www.vogue.com/fashion-shows/spring-2024-ready-to-wear/gabriela-hearst"
+      },
+      {
+        "name": "WWD",
+        "logo": "assets/img/press/press-wwd-logo-1200x630.png",
+        "logo_alt": "WWD",
+        "caption": "WWD · Gabriela Hearst SS24",
+        "url": "https://wwd.com/runway/spring-2024/new-york/gabriela-hearst/review/"
+      },
+      {
+        "name": "Le Nouvelliste",
+        "logo": "assets/img/press/press-le-nouvelliste-225x225.png",
+        "logo_alt": "Le Nouvelliste logo",
+        "caption": "Le Nouvelliste",
+        "url": null
+      },
+      {
+        "name": "The New York Times",
+        "logo": "assets/img/press/press-nyt-logo-3840x2160.png",
+        "logo_alt": "The New York Times logo",
+        "caption": "The New York Times · 1993",
+        "url": "https://www.nytimes.com/1993/06/07/arts/an-influential-collector-of-modern-haitian-art.html"
+      },
+      {
+        "name": "Smithsonian Institution",
+        "logo": "assets/img/press/press-smithsonian-logo-174x174.png",
+        "logo_alt": "Smithsonian Institution logo",
+        "caption": "Smithsonian Institution",
+        "url": "https://global.si.edu/projects/haiti-cultural-recovery-project"
+      },
+      {
+        "name": "CNN",
+        "logo": "assets/img/press/press-cnn-logo-3840x2160.png",
+        "logo_alt": "CNN logo",
+        "caption": "CNN · 2010",
+        "url": "https://www.youtube.com/watch?v=_KcS-gJ3TJA"
+      },
+      {
+        "name": "Art in Embassies, U.S. Department of State",
+        "logo": "assets/img/press/press-aie-logo-598x111.png",
+        "logo_alt": "Art in Embassies logo",
+        "caption": "Art in Embassies · U.S. Department of State",
+        "url": "https://art.state.gov/personnel/levoy_exil"
+      }
+    ]
+  },
+  "press_page": {
+    "eyebrow": "Press & recognition",
+    "heading": "Press",
+    "sub": "The world has been watching Levoy Exil for decades — from the art pages of The New York Times to the runway at New York Fashion Week.",
+    "groups": [
+      {
+        "heading": "The Gabriela Hearst collaboration",
+        "sub": "Coverage of the Spring Summer 2024 collection inspired by Exil's painting Solrou.",
+        "items": [
+          {
+            "publication": "Vogue",
+            "title": "Gabriela Hearst Spring 2024 Ready-to-Wear — runway review",
+            "blurb": "Vogue Runway's review of the Spring 2024 collection built around Levoy Exil's painting Solrou.",
+            "url": "https://www.vogue.com/fashion-shows/spring-2024-ready-to-wear/gabriela-hearst",
+            "logo": "assets/img/press/press-vogue-logo-1200x630.png",
+            "featured": true
+          },
+          {
+            "publication": "WWD",
+            "title": "Gabriela Hearst RTW Spring 2024 — runway review",
+            "blurb": "Women's Wear Daily reviews the New York show carrying Exil's suns and sacred geometry to the runway.",
+            "url": "https://wwd.com/runway/spring-2024/new-york/gabriela-hearst/review/",
+            "logo": "assets/img/press/press-wwd-logo-1200x630.png"
+          },
+          {
+            "publication": "Vogue",
+            "title": "11 Spring 2024 Fashion Trends That Define the Season",
+            "blurb": "Vogue's season-defining trends roundup, featuring the Gabriela Hearst Spring 2024 collection.",
+            "url": "https://www.vogue.com/article/11-spring-2024-fashion-trends-that-define-the-season",
+            "logo": "assets/img/press/press-vogue-logo-1200x630.png"
+          },
+          {
+            "publication": "Fashionista",
+            "title": "Gabriela Hearst Spring 2024 collection",
+            "blurb": "Coverage of the Spring 2024 collection and its Haitian art inspiration.",
+            "url": "https://fashionista.com/2023/09/gabriela-hearst-spring-2024-collection",
+            "logo": "assets/img/press/press-fashionista-logo-886x228.png",
+            "logo_alt": "Fashionista"
+          },
+          {
+            "publication": "Grazia",
+            "title": "NYFW: Gabriela Hearst Spring/Summer 2024",
+            "blurb": "New York Fashion Week report on the Spring/Summer 2024 show.",
+            "url": "https://graziamagazine.com/articles/gabriela-hearst-nyfw-ss24/",
+            "logo": "assets/img/press/press-grazia-logo-996x312.png",
+            "logo_alt": "Grazia"
+          },
+          {
+            "publication": "Fashion Network",
+            "title": "NYFW: Gabriela Hearst and Bach Mai",
+            "blurb": "New York Fashion Week report covering the Gabriela Hearst Spring 2024 presentation.",
+            "url": "https://ww.fashionnetwork.com/news/Nyfw-gabriela-hearst-and-bach-mai,1555953.html",
+            "logo": "assets/img/press/press-fashionnetwork-logo-999x230.png",
+            "logo_alt": "Fashion Network"
+          },
+          {
+            "publication": "RAIN Magazine",
+            "title": "Stepping into Gabriela Hearst's Dreamy Spring 2024 Vision",
+            "blurb": "Feature on how the partnership between Gabriela Hearst and Levoy Exil was built.",
+            "url": "https://rain-mag.com/stepping-into-gabriela-hearsts-dreamy-spring-2024-vision-a-journey-beyond-the-veil/",
+            "logo": "assets/img/press/press-rain-magazine-logo-1000x301.png",
+            "logo_alt": "RAIN Magazine"
+          },
+          {
+            "publication": "Yahoo News",
+            "title": "Spring 2024 Gabriela Hearst",
+            "blurb": "Syndicated coverage of the Gabriela Hearst Spring 2024 collection.",
+            "url": "https://news.yahoo.com/spring-2024-gabriela-hearst-protective-222621722.html",
+            "logo": "assets/img/press/press-yahoo-news-logo-1000x162.png",
+            "logo_alt": "Yahoo News"
+          },
+          {
+            "publication": "Kendam",
+            "title": "Gabriela Hearst Spring Summer 2024 runway",
+            "blurb": "Runway coverage of the Spring Summer 2024 show.",
+            "url": "https://kendam.com/news/fashion-shows/gabriela-hearst-spring-summer-2024-runway",
+            "logo": "assets/img/press/press-kendam-logo-1000x199.png",
+            "logo_alt": "Kendam"
+          }
+        ],
+        "tone": "tint"
+      },
+      {
+        "heading": "Press",
+        "sub": "Newspapers and broadcasters on Levoy Exil and Haitian art.",
+        "items": [
+          {
+            "publication": "The New York Times",
+            "title": "An Influential Collector of Modern Haitian Art (June 7, 1993)",
+            "blurb": "The Times on the world of modern Haitian art collecting — cited as a reference on Exil's Wikipedia page.",
+            "url": "https://www.nytimes.com/1993/06/07/arts/an-influential-collector-of-modern-haitian-art.html",
+            "logo": "assets/img/press/press-nyt-logo-3840x2160.png"
+          },
+          {
+            "publication": "CNN",
+            "title": "Quake's toll on Haitian art, heritage and income (January 29, 2010)",
+            "blurb": "CNN on the 2010 earthquake's impact on Haitian art and artists, featuring Exil.",
+            "url": "https://edition.cnn.com/2010/LIVING/01/29/haitian.art.lost/index.html",
+            "logo": "assets/img/press/press-cnn-logo-3840x2160.png"
+          },
+          {
+            "publication": "Ticket Magazine (Le Nouvelliste)",
+            "title": "Haiti celebrates the Gabriela Hearst collaboration (September 2023)",
+            "blurb": "Haiti's leading newspaper celebrates Exil's painting Solrou inspiring a luxury runway collection in New York.",
+            "url": null,
+            "logo": "assets/img/press/press-le-nouvelliste-225x225.png"
+          }
+        ],
+        "tone": "plain"
+      },
+      {
+        "heading": "Recognition",
+        "sub": "Institutions, references, and the market record.",
+        "items": [
+          {
+            "publication": "U.S. Department of State",
+            "title": "Art in Embassies: Levoy Exil",
+            "blurb": "The State Department's official artist page for Levoy Exil.",
+            "url": "https://art.state.gov/personnel/levoy_exil/",
+            "logo": "assets/img/press/press-aie-logo-598x111.png"
+          },
+          {
+            "publication": "Smithsonian Institution",
+            "title": "Haiti Cultural Recovery Project",
+            "blurb": "The Smithsonian's project safeguarding Haitian art and heritage, in which Exil's work is represented.",
+            "url": "https://global.si.edu/projects/haiti-cultural-recovery-project",
+            "logo": "assets/img/press/press-smithsonian-logo-174x174.png"
+          },
+          {
+            "publication": "Wikipedia",
+            "title": "Levoy Exil — biography",
+            "blurb": "The encyclopedia entry on his life, the Saint Soleil school, and the Cinq Soleil group.",
+            "url": "https://en.wikipedia.org/wiki/Levoy_Exil",
+            "logo": "assets/img/press/press-wikipedia-logo-885x1004.png",
+            "logo_alt": "Wikipedia"
+          },
+          {
+            "publication": "Nader Haitian Art",
+            "title": "Levoy Exil — gallery biography",
+            "blurb": "Biography from the established Haitian art gallery.",
+            "url": "https://www.naderhaitianart.com/collections/levoy-exil-haitian-artist-biography",
+            "logo": "assets/img/press/press-nader-logo-600x545.png",
+            "logo_alt": "Nader Haitian Art"
+          },
+          {
+            "publication": "Google Arts & Culture",
+            "title": "Levoy Exil — artist page",
+            "blurb": "Google's cultural archive entry for the artist.",
+            "url": "https://artsandculture.google.com/entity/m0gjblsh",
+            "logo": "assets/img/press/press-google-arts-culture-logo-471x470.png",
+            "logo_alt": "Google Arts & Culture"
+          },
+          {
+            "publication": "MutualArt",
+            "title": "Auction results — record $4,675 for “Figure” (Artcurial, 2019)",
+            "blurb": "Public auction history for Levoy Exil's work.",
+            "url": "https://www.mutualart.com/Artist/Levoy-Exil/1B8843B6CF78B0E6",
+            "logo": "assets/img/press/press-mutualart-logo-1000x158.png",
+            "logo_alt": "MutualArt"
+          }
+        ],
+        "tone": "tint"
+      }
+    ],
+    "feature_image": "assets/img/site/hearst.jpg",
+    "feature_image_alt": "Detail of Levoy Exil’s painting Solrou, inspiration for the Gabriela Hearst Spring Summer 2024 collection"
+  },
+  "homepage": {
+    "sections": [
+      {
+        "type": "hero"
+      },
+      {
+        "type": "about"
+      },
+      {
+        "type": "featured_artworks"
+      },
+      {
+        "type": "press"
+      },
+      {
+        "type": "custom",
+        "id": "gabriela-hearst",
+        "eyebrow": "Fashion collaboration",
+        "heading": "Gabriela Hearst × Levoy Exil",
+        "image": "assets/img/site/hearst.jpg",
+        "image_alt": "Look from Gabriela Hearst’s Spring Summer 2024 collection inspired by Levoy Exil",
+        "image_position": "left",
+        "paragraphs": [
+          "In 2023, Levoy Exil’s masterpiece “Solrou: The Sun’s creates Unity” became the wellspring of Gabriela Hearst’s luxurious Spring Summer 2024 collection — shown on the runway at New York Fashion Week. Crafted with 31 artisans over 5,000+ hours, the collection carried Exil’s suns, spirits, and sacred geometry from the mountains of Fermathe to the world stage."
+        ],
+        "video_youtube_id": "WUl9KtUQf38",
+        "video_title": "How the Gabriela Hearst × Levoy Exil partnership was built",
+        "cta_label": "Read the Rain Magazine feature",
+        "cta_url": "https://rain-mag.com/stepping-into-gabriela-hearsts-dreamy-spring-2024-vision-a-journey-beyond-the-veil/"
+      },
+      {
+        "type": "news"
+      },
+      {
+        "type": "studio_products"
+      },
+      {
+        "type": "faq"
+      },
+      {
+        "type": "contact"
+      }
+    ]
+  },
+  "featured": {
+    "heading": "Selected Originals",
+    "sub": "One-of-a-kind paintings from the gallery — every piece is an original, available for direct enquiry.",
+    "artworks": [
+      "soltala",
+      "les-triples-de-shelsy",
+      "trisolfa",
+      "talasolba",
+      "decoumtana",
+      "solcumfam",
+      "rozoun",
+      "besolfame"
+    ]
+  },
+  "news": {
+    "eyebrow": "Stories",
+    "heading": "News",
+    "sub": "Stories from the life and work of Levoy Exil.",
+    "articles": [
+      {
+        "slug": "still-painting-at-81",
+        "title": "Still Painting at 81: The Enduring Fire of Levoy Exil",
+        "date": "2026-09-20",
+        "teaser": "Born in 1944, Levoy Exil has painted for over fifty years — and at 81, he still paints, carrying the Saint Soleil spirit from the mountains of Fermathe to the world.",
+        "body": [
+          {
+            "h2": "Who he is"
+          },
+          "Levoy Exil was born on October 19, 1944, in Soissons-la-Montagne Fermathe, Haiti — a village in the mountains above Port-au-Prince where the spirit world was never far from daily life. He began painting in 1972, and a year later joined the Saint Soleil workshops founded by the artist Tiga (Jean-Claude Garoute) — a radical experiment that put brushes in the hands of mountain-dwelling farmers with no prior exposure to art and invited them to paint what they saw in dreams and in the Vodou spirits around them.",
+          {
+            "h2": "The Malraux visit"
+          },
+          "The world noticed. In 1975, the French novelist and statesman André Malraux traveled to the Saint Soleil community, recognized the artists as conduits of spiritual expression, and devoted a chapter of his final book, “L’Intemporel,” to the movement — with Levoy Exil’s artwork on the cover. In 1977, Exil’s work appeared at the World Theater Festival in Nancy, France. Over the five decades since, his paintings have been shown and collected internationally, yet his subject never changed: the Loas, the suns, the birds, the eyes and serpentine forms of Haitian spiritual life, rendered in pointillist compositions of astonishing density and color.",
+          {
+            "img": {
+              "src": "assets/img/artworks/foksou.jpg",
+              "alt": "Foksou (2025) by Levoy Exil — blue and violet serpentine figures outlined in gold dots",
+              "caption": "Foksou (2025) — available in the gallery.",
+              "link": "/artwork/foksou/"
+            }
+          },
+          {
+            "h2": "Still painting"
+          },
+          "Now 81, Levoy Exil is still painting. The hand that learned its craft in the Fermathe workshops of 1973 continues to layer dot upon dot, sun upon sun — proof that the Saint Soleil fire was never a moment but a lifelong practice. Collectors who acquire his originals are not just buying a painting; they are taking home a living chapter of Haitian art history, still being written."
+        ],
+        "image": {
+          "src": "assets/img/site/artist-with-paintings.jpg",
+          "alt": "Levoy Exil standing among dozens of his colorful paintings",
+          "caption": "Levoy Exil among his paintings in Fermathe, Haiti."
+        }
+      },
+      {
+        "slug": "gabriela-hearst-collaboration",
+        "title": "From Fermathe to the Runway: Levoy Exil × Gabriela Hearst",
+        "date": "2026-09-20",
+        "teaser": "How “Solrou: The Sun’s creates Unity” traveled from a Haitian mountain studio to the Gabriela Hearst Spring Summer 2024 runway at New York Fashion Week.",
+        "body": [
+          {
+            "h2": "From the mountains to the runway"
+          },
+          "In 2023, one of Levoy Exil’s masterpieces, “Solrou: The Sun’s creates Unity,” became the wellspring of Gabriela Hearst’s luxurious Spring Summer 2024 collection — shown on the runway at New York Fashion Week. It is rare for a fashion house of that stature to build an entire collection around a living Haitian painter, and rarer still for the source to be a single canvas. But “Solrou” offered what Hearst was looking for: suns, spirits, and sacred geometry, a vision of unity rendered in Exil’s unmistakable hand.",
+          {
+            "h2": "5,000 hours of craft"
+          },
+          "The collection was crafted with 31 artisans over more than 5,000 hours — a scale of handwork that mirrors the patience of Exil’s own pointillist method. His imagery traveled from a mountain studio in Fermathe to the world stage without losing its meaning: the sun that creates unity in the painting became a sun carried down the runway.",
+          {
+            "h2": "Watch the film"
+          },
+          {
+            "video": {
+              "youtube_id": "WUl9KtUQf38",
+              "title": "How the Gabriela Hearst × Levoy Exil partnership was built",
+              "poster": "assets/img/site/hearst.jpg",
+              "poster_alt": "Look from Gabriela Hearst’s Spring Summer 2024 collection inspired by Levoy Exil"
+            }
+          },
+          {
+            "h2": "On the runway"
+          },
+          {
+            "gallery": {
+              "images": [
+                {
+                  "src": "assets/img/site/hearst-runway-1.jpg",
+                  "alt": "Model wearing the white Solrou-inspired macrame gown on the Gabriela Hearst Spring Summer 2024 runway",
+                  "caption": "The Solrou macrame gown, full length"
+                },
+                {
+                  "src": "assets/img/site/hearst-runway-2.jpg",
+                  "alt": "Model walking the Gabriela Hearst Spring Summer 2024 runway in the white Solrou-inspired lace gown",
+                  "caption": "On the runway at New York Fashion Week"
+                },
+                {
+                  "src": "assets/img/site/hearst-runway-3.jpg",
+                  "alt": "Close-up of the white macrame lacework inspired by Levoy Exil's Solrou on the Gabriela Hearst runway",
+                  "caption": "Detail: the macrame lacework drawn from Solrou"
+                },
+                {
+                  "src": "assets/img/site/hearst-runway-4.jpg",
+                  "alt": "Model in the white Solrou-inspired gown on the Gabriela Hearst Spring Summer 2024 runway",
+                  "caption": "Exil's suns and spirits, worn"
+                }
+              ],
+              "credit": "Runway photographs by Filippo Fior / GoRunway.com"
+            }
+          },
+          {
+            "img": {
+              "src": "assets/img/artworks/famousol.jpg",
+              "alt": "Famousol by Levoy Exil — a golden sun face on a deep red field",
+              "caption": "Famousol — echoing the golden suns of “Solrou: The Sun’s creates Unity.” Available in the gallery.",
+              "link": "/artwork/famousol/"
+            }
+          },
+          {
+            "h2": "Why it matters"
+          },
+          "For Levoy Exil, the collaboration was more than fashion. It was proof that the spiritual language he has painted for over fifty years speaks fluently to the contemporary world — and that Haitian art belongs wherever the world’s eyes are looking."
+        ],
+        "image": {
+          "src": "assets/img/site/hearst.jpg",
+          "alt": "Levoy Exil painting beside a Gabriela Hearst crocheted garment from the Spring Summer 2024 collection",
+          "caption": "Exil’s artwork alongside a Gabriela Hearst Spring Summer 2024 crocheted piece."
+        }
+      }
+    ]
+  },
+  "contact_section": {
+    "heading": "Enquire About an Original",
+    "text": "Every painting on this site is an original by Levoy Exil. To purchase or ask about a piece, message the gallery on WhatsApp or by email — we reply Monday to Saturday, 8 AM–8 PM EST."
+  },
+  "faq": {
+    "eyebrow": "Good to know",
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "Who is Levoy Exil?",
+        "a": "Levoy Exil (born October 19, 1944, in Soissons-la-Montagne Fermathe, Haiti) is a renowned Haitian painter and a pivotal figure of the Saint Soleil art movement, which he joined in 1973. His work is held in collections worldwide and has been exhibited across Haiti, the Americas, and Europe for five decades."
+      },
+      {
+        "q": "What is the Saint Soleil movement?",
+        "a": "Saint Soleil is a Haitian art movement born in 1973 from workshops initiated by the artist Tiga (Jean-Claude Garoute). It empowered mountain-dwelling peasants with no prior art exposure to paint spirituality and dreams. The French writer André Malraux devoted a chapter of his final book, “L’Intemporel,” to the movement — with a Levoy Exil painting on the cover."
+      },
+      {
+        "q": "What inspires Levoy Exil’s paintings?",
+        "a": "Haitian heritage and spirituality: Vodou spirits (loas), vivid dreams, suns, celestial bodies, and sacred geometry. Working in pointillism, he builds intricate compositions of eyes, limbs, hair, and serpentine forms that pulse with rhythmic, mystical energy."
+      },
+      {
+        "q": "What was the Gabriela Hearst collaboration?",
+        "a": "In 2023, Exil’s masterpiece “Solrou: The Sun’s creates Unity” became the wellspring of Gabriela Hearst’s Spring Summer 2024 collection, shown at New York Fashion Week. Crafted with 31 artisans over 5,000+ hours, the collection carried his suns, spirits, and sacred geometry from the mountains of Fermathe to the world stage."
+      },
+      {
+        "q": "How do I buy an original Levoy Exil painting?",
+        "a": "There is no online checkout. Choose a painting and enquire via WhatsApp at +509 3424-9786 or by email at levoyexilgallery@gmail.com, naming the piece. The gallery confirms availability and arranges payment and shipping with you directly. Sold works stay visible and can also be enquired about."
+      }
+    ]
+  },
+  "pages": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy for levoyexil.com — what information the gallery collects when you enquire about an original painting, and how it is used.",
+      "intro": "This policy explains what information this website collects and how it is used. Last updated September 20, 2026.",
+      "sections": [
+        {
+          "heading": "How this site works",
+          "body": [
+            "This is a static showcase website for original paintings. There are no user accounts, no shopping cart, and no checkout. To buy or ask about a painting, you contact the gallery directly via WhatsApp or email."
+          ]
+        },
+        {
+          "heading": "Information you share with us",
+          "body": [
+            "When you send an enquiry — by WhatsApp to +509 3424-9786 or by email to levoyexilgallery@gmail.com — you share your contact details and your message so the gallery can respond. That information is used only to handle your enquiry and any sale that follows from it."
+          ]
+        },
+        {
+          "heading": "Information collected automatically",
+          "body": [
+            "Like most websites, our hosting provider may keep basic technical logs (for example, the pages visited and an approximate location derived from your IP address) to keep the site secure and running reliably. This site does not use advertising trackers."
+          ]
+        },
+        {
+          "heading": "What this site never collects",
+          "body": [
+            "Because there is no checkout, this website never collects payment or card details, and it never takes website orders."
+          ]
+        },
+        {
+          "heading": "How your information is used",
+          "body": [
+            "To respond to your enquiries; to arrange viewings, sales, and shipping you ask about; and to keep the website secure."
+          ]
+        },
+        {
+          "heading": "Sharing your information",
+          "body": [
+            "We do not sell or rent your personal information. Details you share are only passed on where needed to complete something you asked for — for example, a shipping carrier when arranging delivery — or where required by law."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "body": [
+            "You may ask what information the gallery holds about you, and ask for it to be corrected or deleted, by writing to levoyexilgallery@gmail.com."
+          ]
+        },
+        {
+          "heading": "Changes to this policy",
+          "body": [
+            "If this policy changes, the updated version will be posted on this page."
+          ]
+        }
+      ]
+    },
+    "delivery": {
+      "title": "Delivery & Returns",
+      "description": "Delivery and returns information for original Levoy Exil paintings — shipping carriers, timeframes, costs, and the 30-day returns policy.",
+      "intro": "Every painting on this site is an original. There is no online checkout — shipping, delivery estimates, costs, and payment are all arranged personally with the gallery after you enquire.",
+      "sections": [
+        {
+          "heading": "How to buy",
+          "body": [
+            "Choose a painting and send an enquiry via WhatsApp (+509 3424-9786) or email (levoyexilgallery@gmail.com), naming the piece you are interested in. The gallery will confirm availability and arrange payment and shipping with you directly."
+          ]
+        },
+        {
+          "heading": "Shipping",
+          "body": [
+            "Paintings are shipped with FedEx or DHL and typically leave the gallery within 5–10 business days of the arranged sale. Canvases are shipped rolled, or as-is on their stretcher frame.",
+            "Shipping cost depends on the weight, size, destination, and method, and is quoted after your enquiry. A tracking number is provided for every shipment."
+          ]
+        },
+        {
+          "heading": "International orders",
+          "body": [
+            "For international deliveries, the recipient is responsible for any customs duties, taxes, or import charges."
+          ]
+        },
+        {
+          "heading": "Returns",
+          "body": [
+            "If a painting arrives damaged or is not as described, contact the gallery within 30 days of delivery at levoyexilgallery@gmail.com.",
+            "Undamaged pieces in their original condition and packaging may be returned within 30 days of delivery. Return shipping is paid by the buyer unless the gallery made an error. Refunds exclude the original delivery fees."
+          ]
+        }
+      ]
+    }
+  },
+  "exhibitions": [
+    {
+      "year": 2023,
+      "title": "“Summer Spring collection 2024” of Gabriela Hearst Fashion Show",
+      "venue": null,
+      "city": "New York",
+      "country": "USA"
+    },
+    {
+      "year": 2023,
+      "title": "“Mystical Explorations: The Works of Levoy Exil”",
+      "venue": "Contemporary Art Gallery",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 2022,
+      "title": "“Spiritual Journey Through the Canvases of Levoy Exil”",
+      "venue": "Museum of Fine Arts",
+      "city": "Montreal",
+      "country": "Canada"
+    },
+    {
+      "year": 2021,
+      "title": "“The Soul of Haiti Captured by Levoy Exil”",
+      "venue": "International Gallery of Modern Art",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 2020,
+      "title": "“Deep Roots: Dreams and Realities in the Art of Levoy Exil”",
+      "venue": "Haitian Art Museum",
+      "city": "Miami",
+      "country": "United States"
+    },
+    {
+      "year": 2019,
+      "title": "“The Enigma of the Spirit: A Retrospective of Levoy Exil’s Works”",
+      "venue": "Contemporary Art Center",
+      "city": "Geneva",
+      "country": "Switzerland"
+    },
+    {
+      "year": 2018,
+      "title": "“Journey Through Voodoo: Art and Mysticism in the Work of Levoy Exil”",
+      "venue": "Mystical Gallery",
+      "city": "New Orleans",
+      "country": "United States"
+    },
+    {
+      "year": 2017,
+      "title": "“Inner Gazes: The Visionary Art of Levoy Exil”",
+      "venue": "Museum of Spiritual Arts",
+      "city": "Rio de Janeiro",
+      "country": "Brazil"
+    },
+    {
+      "year": 2016,
+      "title": "“Explorations of the Psyche: Paintings by Levoy Exil”",
+      "venue": "Gallery of the Free Spirit",
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    {
+      "year": 2015,
+      "title": "“Light of the Soul: The Mystical Paintings of Levoy Exil”",
+      "venue": "Cultural Center of Haiti",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 2014,
+      "title": "“Beyond Borders: The Universal Creations of Levoy Exil”",
+      "venue": "Museum of Universal Soul",
+      "city": "New York",
+      "country": "United States"
+    },
+    {
+      "year": 2013,
+      "title": "“Spiritual Journey Through Colors: Retrospective of Levoy Exil’s Works”",
+      "venue": "Gallery of Dreams",
+      "city": "Berlin",
+      "country": "Germany"
+    },
+    {
+      "year": 2012,
+      "title": "“Mysteries of Art: Vision and Revelation in the Work of Levoy Exil”",
+      "venue": "Museum of Mysticism",
+      "city": "Florence",
+      "country": "Italy"
+    },
+    {
+      "year": 2011,
+      "title": "“A Painter under Voodoo Influence”",
+      "venue": "House of the General Council",
+      "city": "Beauvais",
+      "country": "France"
+    },
+    {
+      "year": 2010,
+      "title": "Festival",
+      "venue": "Smithsonian Museum",
+      "city": "Washington D.C.",
+      "country": "United States"
+    },
+    {
+      "year": 2009,
+      "title": "“The Last Journey of André Malraux to Haiti”",
+      "venue": "Montparnasse Museum",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 2007,
+      "title": null,
+      "venue": "David Barnett Gallery",
+      "city": "Milwaukee, Wisconsin",
+      "country": "United States"
+    },
+    {
+      "year": 2004,
+      "title": "“Haiti Colors, Haiti Pains”",
+      "venue": "Nancy Media Library",
+      "city": "Nancy",
+      "country": "France"
+    },
+    {
+      "year": 2002,
+      "title": null,
+      "venue": "World Bank",
+      "city": "Washington D.C.",
+      "country": "United States"
+    },
+    {
+      "year": 2001,
+      "title": "“Sak Pase”",
+      "venue": "MIA Gallery at Miami International Airport",
+      "city": "Miami",
+      "country": "United States"
+    },
+    {
+      "year": 2000,
+      "title": "“Haitian Celebration”",
+      "venue": "Museum of Art",
+      "city": "Coral Springs, Florida",
+      "country": "United States"
+    },
+    {
+      "year": 1999,
+      "title": "“Expressions of the Spirit”",
+      "venue": "Lelong Gallery",
+      "city": "New York",
+      "country": "United States"
+    },
+    {
+      "year": 1998,
+      "title": "“Vodou/Voodoo”",
+      "venue": "Aldobrandini Stables",
+      "city": "Rome",
+      "country": "Italy"
+    },
+    {
+      "year": 1997,
+      "title": "“Haiti: Kingdom of this World”",
+      "venue": "UCLA Fowler Museum of Cultural History",
+      "city": "Los Angeles",
+      "country": "United States"
+    },
+    {
+      "year": 1996,
+      "title": "“Saint Soleil: Women Artists of Haiti”",
+      "venue": "Waterloo Gallery",
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    {
+      "year": 1995,
+      "title": "“Mystic Sun: Haitian Art from the Saint Soleil Collection”",
+      "venue": "Figge Art Museum",
+      "city": "Davenport, Iowa",
+      "country": "United States"
+    },
+    {
+      "year": 1994,
+      "title": "“Haitian Painters”",
+      "venue": "Nader Art Museum",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 1993,
+      "title": "“Haitian Artists”",
+      "venue": "Museum of Modern Art",
+      "city": "Santo Domingo",
+      "country": "Dominican Republic"
+    },
+    {
+      "year": 1992,
+      "title": "“Art of the Magic Mountains”",
+      "venue": "Contemporary Art Center",
+      "city": "New Orleans",
+      "country": "United States"
+    },
+    {
+      "year": 1991,
+      "title": "“Haiti: Naive Art, Voodoo Art”",
+      "venue": "Galerie der Spiegel",
+      "city": "Cologne",
+      "country": "Germany"
+    },
+    {
+      "year": 1990,
+      "title": "“Haitian Arts”",
+      "venue": "Municipal Art Gallery of Davenport",
+      "city": "Davenport, Iowa",
+      "country": "United States"
+    },
+    {
+      "year": 1989,
+      "title": "“Haitian Painters”",
+      "venue": "Nader Art Museum",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 1988,
+      "title": null,
+      "venue": "National Galleries of the Grand Palais",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 1987,
+      "title": "“Where Art is Joy”",
+      "venue": "Queens College",
+      "city": "New York",
+      "country": "United States"
+    },
+    {
+      "year": 1986,
+      "title": "“Haitian Arts”",
+      "venue": "Waterloo Gallery",
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    {
+      "year": 1985,
+      "title": "“Haitian Painters”",
+      "venue": "Nader Art Museum",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 1984,
+      "title": "“Art Expo”",
+      "venue": null,
+      "city": "New York",
+      "country": "United States"
+    },
+    {
+      "year": 1983,
+      "title": "“Levoy Exil: Recent Works”",
+      "venue": "Monnin Gallery",
+      "city": "Pétion-Ville",
+      "country": "Haiti"
+    },
+    {
+      "year": 1982,
+      "title": "“Haitian Painters”",
+      "venue": "Nader Art Museum",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 1981,
+      "title": "“The Grand Voodoo”",
+      "venue": "Monnin Gallery",
+      "city": "Pétion-Ville",
+      "country": "Haiti"
+    },
+    {
+      "year": 1980,
+      "title": "“Contemporary Haitian Art”",
+      "venue": "Bishop Gallery",
+      "city": "Brooklyn, New York",
+      "country": "United States"
+    },
+    {
+      "year": 1979,
+      "title": "“Haitian Painters”",
+      "venue": "Nader Art Museum",
+      "city": "Port-au-Prince",
+      "country": "Haiti"
+    },
+    {
+      "year": 1978,
+      "title": null,
+      "venue": "Monnin Gallery",
+      "city": "Pétion-Ville",
+      "country": "Haiti"
+    },
+    {
+      "year": 1977,
+      "title": null,
+      "venue": "World Theater Festival",
+      "city": "Nancy",
+      "country": "France"
+    },
+    {
+      "year": 1976,
+      "title": null,
+      "venue": "Brochard Gallery",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 1975,
+      "title": null,
+      "venue": "Brochard Gallery",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 1974,
+      "title": null,
+      "venue": "Brochard Gallery",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 1973,
+      "title": null,
+      "venue": "Brochard Gallery",
+      "city": "Paris",
+      "country": "France"
+    },
+    {
+      "year": 1972,
+      "title": null,
+      "venue": "Brochard Gallery",
+      "city": "Paris",
+      "country": "France"
+    }
+  ],
+  "artworks": [
+    {
+      "slug": "kafoyf",
+      "title": "Kafoyf",
+      "price": 150,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "5 x 16 inches",
+      "source_image": "kafoyf-primary.jpg"
+    },
+    {
+      "slug": "griboul",
+      "title": "Griboul",
+      "price": 150,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "5 x 16 inches",
+      "source_image": "griboul-primary.jpg"
+    },
+    {
+      "slug": "palechou",
+      "title": "Palechou",
+      "price": 150,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "5 x 16 inches",
+      "source_image": "palechou-primary.jpg"
+    },
+    {
+      "slug": "foksou",
+      "title": "Foksou",
+      "price": 150,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "5 x 16 inches",
+      "source_image": "foksou-primary.jpg"
+    },
+    {
+      "slug": "lunedemas",
+      "title": "Lunedemas",
+      "price": 250,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "lunedemas-primary.jpg"
+    },
+    {
+      "slug": "couchesun",
+      "title": "Couchesun",
+      "price": 250,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "10 x 12 inches",
+      "source_image": "couchesun-primary.jpg"
+    },
+    {
+      "slug": "besolfame",
+      "title": "Besolfame",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "besolfame-primary.jpg"
+    },
+    {
+      "slug": "sayluma",
+      "title": "Sayluma",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "sayluma-primary.jpg"
+    },
+    {
+      "slug": "rezalcumba",
+      "title": "Rezalcumba",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "rezalcumba-primary.jpg"
+    },
+    {
+      "slug": "solcumfam",
+      "title": "Solcumfam",
+      "price": 600,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "20 x 24 inches",
+      "source_image": "solcumfam-primary.jpg"
+    },
+    {
+      "slug": "famousol",
+      "title": "Famousol",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "famousol-primary.jpg"
+    },
+    {
+      "slug": "ronlaka",
+      "title": "Ronlaka",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "ronlaka-primary.jpg"
+    },
+    {
+      "slug": "defamocum",
+      "title": "Defamocum",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "defamocum-primary.jpg"
+    },
+    {
+      "slug": "kochbama",
+      "title": "Kochbama",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "kochbama-primary.jpg"
+    },
+    {
+      "slug": "zilba",
+      "title": "Zilba",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "zilba-primary.jpg"
+    },
+    {
+      "slug": "rokambo",
+      "title": "Rokambo",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "16 x 24 inches",
+      "source_image": "rokambo-primary.jpg"
+    },
+    {
+      "slug": "feylumba",
+      "title": "Feylumba",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "feylumba-primary.jpg"
+    },
+    {
+      "slug": "kotecum",
+      "title": "Kotecum",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "kotecum-primary.jpg"
+    },
+    {
+      "slug": "fasolcum",
+      "title": "Fasolcum",
+      "price": 600,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "20 x 24 inches",
+      "source_image": "fasolcum-primary.jpg",
+      "lifestyle_image": "fasolcum-gallery-frame.jpg"
+    },
+    {
+      "slug": "soldalum",
+      "title": "Soldalum",
+      "price": 600,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "20 x 24 inches",
+      "source_image": "soldalum-primary.jpg",
+      "lifestyle_image": "soldalum-gallery-frame.png"
+    },
+    {
+      "slug": "qual",
+      "title": "Qual",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "qual-primary.jpg"
+    },
+    {
+      "slug": "soltala",
+      "title": "Soltala",
+      "price": 2300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "35 x 45 inches",
+      "source_image": "soltala-primary.jpg"
+    },
+    {
+      "slug": "trisolfa",
+      "title": "Trisolfa",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 40 inches",
+      "source_image": "trisolfa-primary.jpg"
+    },
+    {
+      "slug": "talasolba",
+      "title": "Talasolba",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "35 x 40 inches",
+      "source_image": "talasolba-primary.jpg"
+    },
+    {
+      "slug": "les-triples-de-shelsy",
+      "title": "Les Triplés de Shelsy",
+      "price": 3000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "35 x 62 inches",
+      "source_image": "les-triples-de-shelsy-primary.jpg"
+    },
+    {
+      "slug": "lemener",
+      "title": "Lemener",
+      "price": 700,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "20 x 24 inches",
+      "source_image": "lemener-primary.jpg"
+    },
+    {
+      "slug": "coldoune",
+      "title": "Coldoune",
+      "price": 600,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "14 x 30 inches",
+      "source_image": "coldoune-primary.jpg"
+    },
+    {
+      "slug": "verloune",
+      "title": "Verloune",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "verloune-primary.jpg"
+    },
+    {
+      "slug": "lascasana",
+      "title": "Lascasana",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on canvas",
+      "dimensions": "16 x 12 inches",
+      "source_image": "lascasana-primary.jpg"
+    },
+    {
+      "slug": "salaum",
+      "title": "Salaum",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "salaum-primary.jpg"
+    },
+    {
+      "slug": "rozoun",
+      "title": "Rozoun",
+      "price": 500,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "16 x 24 inches",
+      "source_image": "rozoun-primary.jpg"
+    },
+    {
+      "slug": "calade",
+      "title": "Calade",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "calade-primary.jpg"
+    },
+    {
+      "slug": "renato",
+      "title": "Renato",
+      "price": 2000,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "35 x 38 inches",
+      "source_image": "renato-primary.jpg"
+    },
+    {
+      "slug": "decoumtana",
+      "title": "Decoumtana",
+      "price": 2200,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "28 x 54 inches",
+      "source_image": "decoumtana-primary.jpg"
+    },
+    {
+      "slug": "kosollumba",
+      "title": "Kosollumba",
+      "price": 2000,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "36 x 36 inches",
+      "source_image": "kosollumba-primary.jpg",
+      "lifestyle_image": "kosollumba-gallery-frame.png"
+    },
+    {
+      "slug": "desolfam",
+      "title": "Desolfam",
+      "price": 2700,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 30 inches",
+      "source_image": "desolfam-primary.jpg",
+      "lifestyle_image": "desolfam-gallery-frame.png"
+    },
+    {
+      "slug": "resolfame",
+      "title": "Resolfame",
+      "price": 600,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "20 x 24 inches",
+      "source_image": "resolfame-primary.jpg"
+    },
+    {
+      "slug": "alfasum",
+      "title": "Alfasum",
+      "price": 2000,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "36 x 36 inches",
+      "source_image": "alfasum-primary.jpg",
+      "lifestyle_image": "alfasum-gallery-frame.png"
+    },
+    {
+      "slug": "columbasol",
+      "title": "Columbasol",
+      "price": 600,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "20 x 24 inches",
+      "source_image": "columbasol-primary.jpg",
+      "lifestyle_image": "columbasol-gallery-frame.jpg"
+    },
+    {
+      "slug": "solcuma",
+      "title": "Solcuma",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "solcuma-primary.jpg",
+      "lifestyle_image": "solcuma-gallery-frame.png"
+    },
+    {
+      "slug": "falum",
+      "title": "Falum",
+      "price": 300,
+      "availability": "out",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 16 inches",
+      "source_image": "falum-primary.jpg"
+    },
+    {
+      "slug": "falcumda",
+      "title": "Falcumda",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "8 x 10 inches",
+      "source_image": "falcumda-primary.jpg",
+      "lifestyle_image": "falcumda-gallery-frame.png"
+    }
+  ]
+}

@@ -15,6 +15,11 @@ every time something is finished or added — nothing falls through the cracks.
 ## Zanmi's tasks
 
 - [x] Wrote the two news article drafts for Daphnee's review (approved 2026-09-20)
+- [x] Production build prepared (2026-09-21 ~1 AM ET): built a production-ready
+  copy with `"baseurl": ""` in /tmp/levoy-prod — all validation checks pass
+  (42 artwork pages, 49 exhibitions, enquiry links, sitemap, JSON-LD).
+  NOT pushed to GitHub; no custom domain configured; no DNS touched.
+  Cutover checklist: PRODUCTION-CUTOVER-CHECKLIST.md (in repo root).
 - [ ] Prepare the exact DNS records for the cutover (only after her approval)
 - [ ] After cutover: verify SSL, levoyexil.com + www.levoyexil.com, redirects, mobile layout, assets, navigation, every enquiry link
 - [ ] Upload the organized project backup to Google Drive + create the project index
