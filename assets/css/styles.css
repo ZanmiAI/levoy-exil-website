@@ -138,6 +138,8 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
 /* ---------- Feature / custom section ---------- */
 .feature { background: var(--color-primary); color: #fff; border-radius: 20px; overflow: hidden; }
 .feature-grid { display: grid; }
+.feature-media { display: flex; align-items: center; justify-content: center; }
+.feature-media .video-facade { align-self: center; width: 100%; }
 .feature img { width: 100%; height: 100%; object-fit: cover; min-height: 260px; }
 .feature-body { padding: 2.4rem; }
 .feature-body h2, .feature-body .eyebrow { color: var(--color-sand); }

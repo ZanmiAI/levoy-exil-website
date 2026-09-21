@@ -63,6 +63,8 @@ every time something is finished or added — nothing falls through the cracks.
 ## 2026-09-20 ~11:24 PM ET — Awaiting Gabriela Hearst photo permission (Daphnee sent ask)
 - Daphnee sent the permission request to Gabriela Hearst's team for the 4 runway
   photos (Solrou macrame look, Filippo Fior / GoRunway).
-- ON PERMISSION: publish the 4 photos BIG on the Hearst news article
-  (assets/img/site/hearst-runway-*.jpg) with the credit line they specify.
-- If no reply in ~1 week, nudge Daphnee to follow up.
+- PUBLISHED 2026-09-20 ~11:35 PM ET while permission is pending (Daphnee's
+  explicit instruction after the rights flag): "On the runway" gallery with the
+  4 Solrou macrame shots + credit "Runway photographs by Filippo Fior /
+  GoRunway.com" on the Hearst news article. Rebuild-safe via site_images jobs.
+- IF PERMISSION DENIED or takedown: remove the gallery immediately and rebuild.

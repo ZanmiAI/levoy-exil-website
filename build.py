@@ -186,10 +186,18 @@ def process_images():
     print(f"  {len(ASSETS.get('copy_files', []))} files copied as-is")
     os.makedirs(os.path.join(OUT, "assets/img/press"), exist_ok=True)
     n_press = 0
-    for item in CFG["press"]["items"]:
-        src = os.path.join(SITE_SRC, os.path.basename(item["logo"]))
+    seen_logos = set()
+    press_logo_items = list(CFG["press"]["items"])
+    for g in CFG.get("press_page", {}).get("groups", []):
+        press_logo_items.extend(g.get("items", []))
+    for item in press_logo_items:
+        logo = item.get("logo")
+        if not logo or logo in seen_logos:
+            continue
+        seen_logos.add(logo)
+        src = os.path.join(SITE_SRC, os.path.basename(logo))
         if os.path.exists(src):
-            shutil.copyfile(src, os.path.join(OUT, item["logo"]))
+            shutil.copyfile(src, os.path.join(OUT, logo))
             n_press += 1
     print(f"  {n_press} press logos")
     for p in STUDIO.get("products", []):
@@ -232,6 +240,7 @@ def head(title, description, path="/", og_image=None, og_type="website",
     return f"""<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e3c79">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{esc(canonical)}">
