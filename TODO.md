@@ -130,3 +130,7 @@ every time something is finished or added — nothing falls through the cracks.
   News, Press; footer Explore list keeps all 7). Implemented via a `footer_only`
   flag on nav entries in site.json; site_header() skips flagged items. Rebuilt,
   pushed main c0df390 + gh-pages 29959e0, live-verified on preview.
+- [x] Footer two-column (2026-09-21): per Daphnee — Privacy + Delivery & Returns now sit in
+  their own "Information" column next to "Explore" in the footer for prominence. Footer
+  grid is now 4 columns on desktop; stacks on mobile. Pushed main + gh-pages 8926237,
+  live-verified both columns on preview.
