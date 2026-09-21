@@ -125,3 +125,8 @@ every time something is finished or added — nothing falls through the cracks.
 - NOTE for cutover: the production build in /tmp/levoy-prod predates this change
   and must be REGENERATED from the current build at cutover time (after DNS
   approval), so the lifestyle photos go live on levoyexil.com too.
+- [x] Nav cleanup (2026-09-21): per Daphnee — Privacy + Delivery & Returns are now
+  footer-only (removed from the header; header keeps Home, Gallery, Exhibitions,
+  News, Press; footer Explore list keeps all 7). Implemented via a `footer_only`
+  flag on nav entries in site.json; site_header() skips flagged items. Rebuilt,
+  pushed main c0df390 + gh-pages 29959e0, live-verified on preview.
