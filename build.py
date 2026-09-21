@@ -705,7 +705,7 @@ def build_gallery():
     body = f"""<div class="wrap"><section class="section">
 <p class="eyebrow">Original paintings</p>
 <h1>The Gallery</h1>
-<p class="lead">Browse all {n_all} original paintings by {esc(ARTIST['name'])}. Every piece is one of a kind \u2014 enquire directly via WhatsApp or email about any artwork, including sold pieces.</p>
+<p class="lead">Browse and buy all {n_all} original Haitian paintings by {esc(ARTIST['name'])}. Every piece is one of a kind \u2014 enquire directly via WhatsApp or email about any artwork, including sold pieces.</p>
 <div class="filters" role="group" aria-label="Filter by availability">
 <button class="filter-btn" data-filter="all" aria-pressed="true">All ({n_all})</button>
 <button class="filter-btn" data-filter="in" aria-pressed="false">Available ({n_in})</button>
@@ -715,10 +715,10 @@ def build_gallery():
 <div class="grid grid--cards">{cards}</div>
 </section></div>"""
     write_page("/gallery/",
-               f"Gallery \u2014 {n_all} Original Paintings by {ARTIST['name']}",
-               f"Browse all {n_all} original {ARTIST['name']} paintings "
-               f"({n_in} available). Filter by availability and enquire "
-               f"directly via WhatsApp or email.",
+               f"Original Haitian Paintings for Sale \u2014 {ARTIST['name']} Gallery",
+               f"Buy original Haitian paintings by {ARTIST['name']} "
+               f"({n_in} available now). Each one-of-a-kind acrylic painting "
+               f"is sold through direct enquiry via WhatsApp or email.",
                body, active="/gallery/")
 
 
@@ -787,7 +787,8 @@ def build_news_index():
             + f'<div class="news-grid">{cards}</div>'
             f'</section></div>')
     write_page("/news/", f"News — {ARTIST['name']}",
-               f"News and stories from the life and work of {ARTIST['name']}.",
+               f"News and stories about {ARTIST['name']}, renowned Haitian "
+               f"painter of the Saint Soleil movement.",
                body, active="/news/")
 
 
@@ -1050,10 +1051,10 @@ def build_artwork(a, prev_a, next_a):
 {gallery}
 <div class="artwork-nav">{''.join(nav)}</div>
 </section></div>"""
-    desc = (f"{a['title']}: an original {a['medium'].lower()} painting "
+    desc = (f"{a['title']}: an original Haitian {a['medium'].lower()} painting "
             f"({a['dimensions']}) by {ARTIST['name']}, {money(a['price'])}. "
             f"Enquire directly via WhatsApp or email.")
-    write_page(path, f"{a['title']} \u2014 Original Painting by {ARTIST['name']}",
+    write_page(path, f"{a['title']} \u2014 Original Haitian Painting by {ARTIST['name']}",
                desc, body, active="/gallery/", og_image=rel_art_img(a),
                extra_head=artwork_jsonld(a, path))
 

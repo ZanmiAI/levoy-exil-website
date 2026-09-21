@@ -17,7 +17,7 @@
   },
   "site": {
     "title": "Levoy Exil | Renowned Haitian Painter — Saint Soleil Movement",
-    "description": "Official site of Levoy Exil, renowned Haitian painter of the Saint Soleil movement. Browse 42 original acrylic paintings, exhibition history, and enquire directly via WhatsApp or email.",
+    "description": "Buy original Haitian paintings by Levoy Exil, renowned Haitian painter of the Saint Soleil movement. Browse 42 one-of-a-kind acrylic paintings, exhibition history, and enquire directly via WhatsApp or email.",
     "base_url": "https://levoyexil.com",
     "baseurl": "/levoy-exil-website",
     "lang": "en"
@@ -632,6 +632,22 @@
       {
         "q": "How do I buy an original Levoy Exil painting?",
         "a": "There is no online checkout. Choose a painting and enquire via WhatsApp at +509 3424-9786 or by email at levoyexilgallery@gmail.com, naming the piece. The gallery confirms availability and arranges payment and shipping with you directly. Sold works stay visible and can also be enquired about."
+      },
+      {
+        "q": "Where can I buy original Haitian paintings?",
+        "a": "Right here. Every painting in the gallery is an original, one-of-a-kind work by Levoy Exil — never a print or reproduction. Choose the piece you love and enquire via WhatsApp at +509 3424-9786 or by email at levoyexilgallery@gmail.com; every sale is arranged personally with the gallery."
+      },
+      {
+        "q": "Are these original paintings or prints?",
+        "a": "All originals. Each work is a one-of-a-kind acrylic painting, hand-painted and signed by Levoy Exil. No prints or copies are sold on this site."
+      },
+      {
+        "q": "Do you ship paintings internationally?",
+        "a": "Yes. Paintings are shipped worldwide with careful, insured packaging. Shipping is quoted per painting and destination — message the gallery on WhatsApp or by email for a quote."
+      },
+      {
+        "q": "How do I know a Levoy Exil painting is authentic?",
+        "a": "Every painting sold here comes directly from Levoy Exil’s studio and is signed by the artist. If you are ever offered a painting elsewhere and want to verify it, message the gallery and we will help."
       }
     ]
   },
