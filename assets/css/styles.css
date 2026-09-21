@@ -170,6 +170,9 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
 /* ---------- Artwork detail ---------- */
 .artwork-layout { display: grid; gap: 2.4rem; align-items: start; }
 .artwork-media img { border-radius: 16px; box-shadow: 0 16px 40px color-mix(in srgb, var(--color-primary) 16%, transparent); background: #fff; }
+.artwork-lifestyle { margin: 1.6rem 0 0; }
+.artwork-lifestyle img { width: 100%; height: auto; display: block; }
+.artwork-lifestyle figcaption { text-align: center; font-size: .9rem; color: color-mix(in srgb, var(--color-ink) 72%, transparent); margin-top: .6rem; }
 .artwork-info h1 { font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: .3rem; }
 .artwork-status { margin: .9rem 0 1.2rem; }
 .spec-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; font-size: .98rem; }
