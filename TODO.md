@@ -51,3 +51,18 @@ every time something is finished or added — nothing falls through the cracks.
   tiles for the rest), featured-story card for the Vogue GH runway review with
   the Solrou image, group headers with article counts, alternating tinted bands.
 - Deployed main d6ad3f0 / gh-pages 94dd2df; live-verified.
+
+## 2026-09-20 ~11:25 PM ET — YouTube video added to Hearst article (Daphnee request)
+- "Watch the film" click-to-play block (WUl9KtUQf38) added to the
+  "From Fermathe to the Runway" news article; video already on homepage feature.
+- Runway photos: Daphnee wants the 4 PDF runway shots big on the site. Found in
+  PDF: 4 shots of the Solrou macrame look, credited "FILIPPO FIOR / GORUNWAY.COM"
+  (Vogue screenshot p2). Copyright flag raised — awaiting her confirmation that
+  she has permission/rights before publishing.
+
+## 2026-09-20 ~11:24 PM ET — Awaiting Gabriela Hearst photo permission (Daphnee sent ask)
+- Daphnee sent the permission request to Gabriela Hearst's team for the 4 runway
+  photos (Solrou macrame look, Filippo Fior / GoRunway).
+- ON PERMISSION: publish the 4 photos BIG on the Hearst news article
+  (assets/img/site/hearst-runway-*.jpg) with the credit line they specify.
+- If no reply in ~1 week, nudge Daphnee to follow up.

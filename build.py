@@ -858,6 +858,18 @@ def news_block(b):
                 f'alt="{esc(v.get("poster_alt", ""))}" loading="lazy">'
                 f'<span class="video-play" aria-hidden="true"></span>'
                 f'</button>')
+        if "gallery" in b:
+            g = b["gallery"]
+            figs = "".join(
+                f'<figure><img src="/{esc(i["src"])}" '
+                f'alt="{esc(i.get("alt", ""))}" loading="lazy">'
+                + (f'<figcaption>{esc(i["caption"])}</figcaption>'
+                   if i.get("caption") else "")
+                + '</figure>'
+                for i in g.get("images", []))
+            credit = (f'<p class="gallery-credit">{esc(g["credit"])}</p>'
+                      if g.get("credit") else "")
+            return f'<div class="article-gallery">{figs}</div>{credit}'
         return ""
     return f"<p>{esc(b)}</p>"
 

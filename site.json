@@ -102,6 +102,30 @@
     "dest": "assets/img/site/artist-with-paintings.jpg",
     "max_side": 1920,
     "quality": 80
+   },
+   {
+    "src": "hearst-runway-1.jpg",
+    "dest": "assets/img/site/hearst-runway-1.jpg",
+    "max_side": 1600,
+    "quality": 80
+   },
+   {
+    "src": "hearst-runway-2.jpg",
+    "dest": "assets/img/site/hearst-runway-2.jpg",
+    "max_side": 1600,
+    "quality": 80
+   },
+   {
+    "src": "hearst-runway-3.jpg",
+    "dest": "assets/img/site/hearst-runway-3.jpg",
+    "max_side": 1600,
+    "quality": 80
+   },
+   {
+    "src": "hearst-runway-4.jpg",
+    "dest": "assets/img/site/hearst-runway-4.jpg",
+    "max_side": 1600,
+    "quality": 80
    }
   ],
   "copy_files": [
@@ -506,6 +530,36 @@
        "title": "How the Gabriela Hearst × Levoy Exil partnership was built",
        "poster": "assets/img/site/hearst.jpg",
        "poster_alt": "Look from Gabriela Hearst’s Spring Summer 2024 collection inspired by Levoy Exil"
+      }
+     },
+     {
+      "h2": "On the runway"
+     },
+     {
+      "gallery": {
+       "images": [
+        {
+         "src": "assets/img/site/hearst-runway-1.jpg",
+         "alt": "Model wearing the white Solrou-inspired macrame gown on the Gabriela Hearst Spring Summer 2024 runway",
+         "caption": "The Solrou macrame gown, full length"
+        },
+        {
+         "src": "assets/img/site/hearst-runway-2.jpg",
+         "alt": "Model walking the Gabriela Hearst Spring Summer 2024 runway in the white Solrou-inspired lace gown",
+         "caption": "On the runway at New York Fashion Week"
+        },
+        {
+         "src": "assets/img/site/hearst-runway-3.jpg",
+         "alt": "Close-up of the white macrame lacework inspired by Levoy Exil's Solrou on the Gabriela Hearst runway",
+         "caption": "Detail: the macrame lacework drawn from Solrou"
+        },
+        {
+         "src": "assets/img/site/hearst-runway-4.jpg",
+         "alt": "Model in the white Solrou-inspired gown on the Gabriela Hearst Spring Summer 2024 runway",
+         "caption": "Exil's suns and spirits, worn"
+        }
+       ],
+       "credit": "Runway photographs by Filippo Fior / GoRunway.com"
       }
      },
      {
