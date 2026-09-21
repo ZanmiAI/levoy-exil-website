@@ -185,10 +185,15 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
 .artwork-gallery { margin-top: 3.2rem; }
 .artwork-gallery h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: .4rem; }
 .artwork-gallery .gallery-sub { color: color-mix(in srgb, var(--color-ink) 72%, transparent); margin-bottom: 1.4rem; }
-.artwork-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; }
-.artwork-gallery-grid figure { margin: 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 12%, transparent); display: flex; flex-direction: column; }
-.artwork-gallery-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; display: block; }
+.artwork-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; }
+.artwork-gallery-grid figure { margin: 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px color-mix(in srgb, var(--color-primary) 12%, transparent); display: flex; flex-direction: column; cursor: zoom-in; }
+.artwork-gallery-grid img { width: 100%; height: auto; display: block; }
 .artwork-gallery-grid figcaption { text-align: center; font-size: .82rem; color: color-mix(in srgb, var(--color-ink) 72%, transparent); padding: .55rem .6rem .7rem; }
+
+/* ---- Lightbox: click any "More photos" image to see it full-size ---- */
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(10, 8, 14, .92); display: flex; align-items: center; justify-content: center; padding: 2rem; cursor: zoom-out; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 24px 80px rgba(0, 0, 0, .5); }
+.lightbox-close { position: absolute; top: 1rem; right: 1.25rem; color: #fff; font-size: 2rem; line-height: 1; background: none; border: 0; cursor: pointer; }
 
 /* ---------- Exhibitions ---------- */
 .exhib-timeline { list-style: none; margin: 2rem 0 0; padding: 0; border-left: 3px solid var(--color-sand); }
