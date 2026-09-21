@@ -75,12 +75,14 @@ h1, h2, h3, h4 {
 /* ---------- Hero ---------- */
 .hero { position: relative; color: #fff; overflow: hidden; background: var(--color-primary-deep); }
 .hero-bg { position: absolute; inset: 0; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .5; }
+.hero-bg::after { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 72% 62% at 50% 48%, rgba(5,18,38,.5) 0%, rgba(5,18,38,0) 72%); }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 .hero-inner { position: relative; padding: 5.5rem 0 4.5rem; text-align: center; }
 .hero-logo { width: 92px; height: 92px; margin: 0 auto 1.2rem; border-radius: 50%; background: rgba(255,255,255,.1); padding: 6px; }
-.hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(3rem, 10vw, 5.5rem); color: #fff; margin: 0; text-shadow: 0 3px 24px rgba(0,0,0,.35); }
-.hero .tagline { font-family: var(--font-headings); font-weight: 600; font-size: clamp(1.05rem, 2.6vw, 1.5rem); letter-spacing: .04em; color: var(--color-sand); margin: .6rem 0 0; }
-.hero .eyebrow { color: var(--color-sand); }
+.hero h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(3rem, 10vw, 5.5rem); color: #fff; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,.6), 0 8px 32px rgba(0,0,0,.5); }
+.hero .tagline { font-family: var(--font-headings); font-weight: 600; font-size: clamp(1.05rem, 2.6vw, 1.5rem); letter-spacing: .04em; color: var(--color-sand); margin: .6rem 0 0; text-shadow: 0 1px 10px rgba(0,0,0,.55); }
+.hero .eyebrow { color: var(--color-sand); text-shadow: 0 1px 8px rgba(0,0,0,.55); }
 .hero p.strap { max-width: 60ch; margin: 1.1rem auto 0; opacity: .94; }
 
 /* ---------- Cards / grids ---------- */
