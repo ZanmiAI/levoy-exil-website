@@ -91,3 +91,9 @@ every time something is finished or added — nothing falls through the cracks.
 - Note: Drive archive currently lives under the hello@zanmibackyard.com Google
   account; per Daphnee's chat boundary, do not touch that account from the
   Levoy Exil chat — use the Studio/Levoy connection for any further Drive work.
+
+## 2026-09-21 ~00:15 ET — Press logos backed up to Google Drive
+- All 17 publication logo PNGs uploaded to Drive: "Levoy Exil — Website" >
+  03_Assets > "Press logos" (new subfolder).
+- Includes the corrected black Vogue and WWD mastheads.
+- Skipped press-generic-225x225.png (retired placeholder, no longer used).
