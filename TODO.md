@@ -70,3 +70,24 @@ every time something is finished or added — nothing falls through the cracks.
   4 Solrou macrame shots + credit "Runway photographs by Filippo Fior /
   GoRunway.com" on the Hearst news article. Rebuild-safe via site_images jobs.
 - IF PERMISSION DENIED or takedown: remove the gallery immediately and rebuild.
+
+## 2026-09-21 ~12:15 AM ET — real Vogue + WWD logos (Daphnee: placeholders "do not have logo")
+- The Vogue and WWD press tiles were generated placeholder tiles (white text on
+  brand blue), not the real mastheads. Replaced with the genuine logos, normalized
+  as black-on-transparent 1200x630 tiles matching the other press tiles:
+  Vogue = Didot serif masthead (vector source, re-fit after viewport clipping);
+  WWD = bold sans wordmark (raster source, white knocked out).
+- Same two files feed the press-page cards AND the homepage "As Seen On" section,
+  so one replacement fixed both. No site.json changes needed.
+- Rebuilt, validated, deployed main 9a36102 / gh-pages 45bb073; live-verified
+  the new tiles on the preview URL.
+
+## 2026-09-21 ~12:00 AM ET — old WordPress site archived (6 main pages; artwork pages NOT archived)
+- Full-page desktop PDFs of the 6 main pages (Home, Gallery/Shop, Exhibitions,
+  Privacy, Delivery/Returns, empty Cart) + INDEX.txt saved in Drive folder
+  "Old site archive — WordPress (Sep 2026)" inside "Levoy Exil — Website".
+- GAP: the 42 individual artwork/product pages were NOT separately archived.
+  Decide with Daphnee whether to capture them before the domain cutover.
+- Note: Drive archive currently lives under the hello@zanmibackyard.com Google
+  account; per Daphnee's chat boundary, do not touch that account from the
+  Levoy Exil chat — use the Studio/Levoy connection for any further Drive work.
