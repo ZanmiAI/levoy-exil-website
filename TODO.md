@@ -11,9 +11,12 @@ every time something is finished or added — nothing falls through the cracks.
 - [x] Reviewed and approved both news articles (2026-09-20) — full text published with chosen photos
 - [ ] Approve the domain cutover (DNS switch from WordPress to the new static site)
 - [ ] Send the original Levoy logo source files, if available
+- [ ] Connect a Studio/Levoy Google Drive (the only connected Drive is the Backyard account, which must not be used in this chat) so the old-site photo backup can be uploaded
 
 ## Zanmi's tasks
 
+- [x] Full old-site photo galleries on all 42 artwork pages (2026-09-21, per Daphnee's instruction): downloaded all 119 product-gallery image references (104 unique files) from the 42 live WooCommerce product pages and added them to every artwork page as a "More photos" masonry gallery — the original canvas photograph first, then every "how it looks in your home" framed room mockup, in the old site's order. 8 images that pixel-duplicated the existing lifestyle shot were skipped on their page to avoid showing the same photo twice. build.py generates 1200px web versions; descriptive alt text on every image. Rebuilt (all validation checks pass), synced to preview, pushed to GitHub main + gh-pages. NOTE for cutover: the production build in /tmp/levoy-prod must be REGENERATED at cutover time so the galleries go live on levoyexil.com too.
+- [ ] Upload the old-site photo backup (104 originals + manifest + duplicate archive) to a Studio/Levoy Google Drive folder — BLOCKED: the only connected Drive belongs to hello@zanmibackyard.com, which this chat must not use. Needs Daphnee to connect a Studio/Levoy Drive.
 - [x] Wrote the two news article drafts for Daphnee's review (approved 2026-09-20)
 - [x] Production build prepared (2026-09-21 ~1 AM ET): built a production-ready
   copy with `"baseurl": ""` in /tmp/levoy-prod — all validation checks pass
