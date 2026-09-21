@@ -253,19 +253,23 @@
       "publication": "Vogue",
       "title": "Gabriela Hearst Spring 2024 Ready-to-Wear — runway review",
       "blurb": "Vogue Runway's review of the Spring 2024 collection built around Levoy Exil's painting Solrou.",
-      "url": "https://www.vogue.com/fashion-shows/spring-2024-ready-to-wear/gabriela-hearst"
+      "url": "https://www.vogue.com/fashion-shows/spring-2024-ready-to-wear/gabriela-hearst",
+      "logo": "assets/img/press/press-vogue-logo-1200x630.png",
+      "featured": true
      },
      {
       "publication": "WWD",
       "title": "Gabriela Hearst RTW Spring 2024 — runway review",
       "blurb": "Women's Wear Daily reviews the New York show carrying Exil's suns and sacred geometry to the runway.",
-      "url": "https://wwd.com/runway/spring-2024/new-york/gabriela-hearst/review/"
+      "url": "https://wwd.com/runway/spring-2024/new-york/gabriela-hearst/review/",
+      "logo": "assets/img/press/press-wwd-logo-1200x630.png"
      },
      {
       "publication": "Vogue",
       "title": "11 Spring 2024 Fashion Trends That Define the Season",
       "blurb": "Vogue's season-defining trends roundup, featuring the Gabriela Hearst Spring 2024 collection.",
-      "url": "https://www.vogue.com/article/11-spring-2024-fashion-trends-that-define-the-season"
+      "url": "https://www.vogue.com/article/11-spring-2024-fashion-trends-that-define-the-season",
+      "logo": "assets/img/press/press-vogue-logo-1200x630.png"
      },
      {
       "publication": "Fashionista",
@@ -303,7 +307,8 @@
       "blurb": "Runway coverage of the Spring Summer 2024 show.",
       "url": "https://kendam.com/news/fashion-shows/gabriela-hearst-spring-summer-2024-runway"
      }
-    ]
+    ],
+    "tone": "tint"
    },
    {
     "heading": "Press",
@@ -313,21 +318,25 @@
       "publication": "The New York Times",
       "title": "An Influential Collector of Modern Haitian Art (June 7, 1993)",
       "blurb": "The Times on the world of modern Haitian art collecting — cited as a reference on Exil's Wikipedia page.",
-      "url": "https://www.nytimes.com/1993/06/07/arts/an-influential-collector-of-modern-haitian-art.html"
+      "url": "https://www.nytimes.com/1993/06/07/arts/an-influential-collector-of-modern-haitian-art.html",
+      "logo": "assets/img/press/press-nyt-logo-3840x2160.png"
      },
      {
       "publication": "CNN",
       "title": "Quake's toll on Haitian art, heritage and income (January 29, 2010)",
       "blurb": "CNN on the 2010 earthquake's impact on Haitian art and artists, featuring Exil.",
-      "url": "https://edition.cnn.com/2010/LIVING/01/29/haitian.art.lost/index.html"
+      "url": "https://edition.cnn.com/2010/LIVING/01/29/haitian.art.lost/index.html",
+      "logo": "assets/img/press/press-cnn-logo-3840x2160.png"
      },
      {
       "publication": "Ticket Magazine (Le Nouvelliste)",
       "title": "Haiti celebrates the Gabriela Hearst collaboration (September 2023)",
       "blurb": "Haiti's leading newspaper celebrates Exil's painting Solrou inspiring a luxury runway collection in New York.",
-      "url": null
+      "url": null,
+      "logo": "assets/img/press/press-le-nouvelliste-225x225.png"
      }
-    ]
+    ],
+    "tone": "plain"
    },
    {
     "heading": "Recognition",
@@ -337,13 +346,15 @@
       "publication": "U.S. Department of State",
       "title": "Art in Embassies: Levoy Exil",
       "blurb": "The State Department's official artist page for Levoy Exil.",
-      "url": "https://art.state.gov/personnel/levoy_exil/"
+      "url": "https://art.state.gov/personnel/levoy_exil/",
+      "logo": "assets/img/press/press-aie-logo-598x111.png"
      },
      {
       "publication": "Smithsonian Institution",
       "title": "Haiti Cultural Recovery Project",
       "blurb": "The Smithsonian's project safeguarding Haitian art and heritage, in which Exil's work is represented.",
-      "url": "https://global.si.edu/projects/haiti-cultural-recovery-project"
+      "url": "https://global.si.edu/projects/haiti-cultural-recovery-project",
+      "logo": "assets/img/press/press-smithsonian-logo-174x174.png"
      },
      {
       "publication": "Wikipedia",
@@ -365,13 +376,16 @@
      },
      {
       "publication": "MutualArt",
-      "title": "Auction results — record $4,675 for \u201cFigure\u201d (Artcurial, 2019)",
+      "title": "Auction results — record $4,675 for “Figure” (Artcurial, 2019)",
       "blurb": "Public auction history for Levoy Exil's work.",
       "url": "https://www.mutualart.com/Artist/Levoy-Exil/1B8843B6CF78B0E6"
      }
-    ]
+    ],
+    "tone": "tint"
    }
-  ]
+  ],
+  "feature_image": "assets/img/site/hearst.jpg",
+  "feature_image_alt": "Detail of Levoy Exil’s painting Solrou, inspiration for the Gabriela Hearst Spring Summer 2024 collection"
  },
  "homepage": {
   "sections": [

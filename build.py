@@ -747,37 +747,85 @@ def build_news_index():
                body, active="/news/")
 
 
+def _press_initials(publication):
+    """Monogram fallback for press cards without a logo tile, e.g. 'GA'."""
+    words = [w for w in publication.replace("&", " ").split()
+             if w[0].isalnum()]
+    return "".join(w[0] for w in words[:2]).upper()
+
+
+def _press_card(it):
+    pub = it["publication"]
+    if it.get("logo"):
+        logo = (f'<span class="press-logo">'
+                f'<img src="/{esc(it["logo"])}" alt="{esc(pub)} logo" '
+                f'loading="lazy"></span>')
+    else:
+        logo = (f'<span class="press-logo press-logo--mono" aria-hidden="true">'
+                f'{esc(_press_initials(pub))}</span>')
+    inner = (f'{logo}<span class="press-body">'
+             f'<p class="press-pub">{esc(pub)}</p>'
+             f'<h3>{esc(it["title"])}</h3>'
+             + (f'<p>{esc(it["blurb"])}</p>' if it.get("blurb") else "")
+             + (f'<span class="news-more">Read the article &#8599;</span>'
+                if it.get("url") else "")
+             + '</span>')
+    if it.get("url"):
+        return (f'<a class="press-card" href="{esc(it["url"])}" '
+                f'target="_blank" rel="noopener">{inner}</a>')
+    return f'<div class="press-card">{inner}</div>'
+
+
+def _press_feature(it, pp):
+    pub = it["publication"]
+    logo = (f'<img src="/{esc(it["logo"])}" alt="{esc(pub)} logo">'
+            if it.get("logo") else "")
+    return (
+        f'<a class="press-feature" href="{esc(it["url"])}" '
+        f'target="_blank" rel="noopener">'
+        f'<span class="press-feature-media">'
+        f'<img src="/{esc(pp["feature_image"])}" '
+        f'alt="{esc(pp.get("feature_image_alt", ""))}"></span>'
+        f'<span class="press-feature-body">'
+        f'<p class="press-pub">Featured story</p>'
+        f'<h3>{esc(it["title"])}</h3>'
+        + (f'<p>{esc(it["blurb"])}</p>' if it.get("blurb") else "")
+        + (f'<span class="press-feature-logo">{logo}</span>' if logo else "")
+        + f'<span class="news-more">Read the article &#8599;</span>'
+        f'</span></a>')
+
+
 def build_press_page():
     pp = CFG.get("press_page", {})
-    groups = pp.get("groups", [])
-    g_html = []
-    for g in groups:
-        items = []
-        for it in g.get("items", []):
-            inner = (f'<p class="press-pub">{esc(it["publication"])}</p>'
-                     f'<h3>{esc(it["title"])}</h3>'
-                     + (f'<p>{esc(it["blurb"])}</p>' if it.get("blurb") else ""))
-            if it.get("url"):
-                items.append(
-                    f'<a class="press-card" href="{esc(it["url"])}" '
-                    f'target="_blank" rel="noopener">{inner}'
-                    f'<span class="news-more">Read the article &#8599;</span></a>')
-            else:
-                items.append(f'<div class="press-card">{inner}</div>')
-        g_html.append(
-            f'<h2 class="press-group-h">{esc(g["heading"])}</h2>'
-            + (f'<p class="lead">{esc(g["sub"])}</p>' if g.get("sub") else "")
-            + f'<div class="press-list">{"".join(items)}</div>')
-    body = (f'<div class="wrap"><section class="section">'
-            f'<p class="eyebrow">{esc(pp.get("eyebrow", "Press"))}</p>'
-            f'<h1>{esc(pp.get("heading", "Press"))}</h1>'
-            + (f'<p class="lead">{esc(pp["sub"])}</p>' if pp.get("sub") else "")
-            + "".join(g_html)
-            + f'</section></div>')
+    sections = []
+    for g in pp.get("groups", []):
+        items = [it for it in g.get("items", []) if not it.get("featured")]
+        feat = next((it for it in g.get("items", []) if it.get("featured")
+                     and it.get("url")), None)
+        cards = "".join(_press_card(it) for it in items)
+        head = (
+            f'<div class="press-group-head"><h2>{esc(g["heading"])}</h2>'
+            f'<span class="press-count">{len(g.get("items", []))} '
+            f'{"article" if len(g.get("items", [])) == 1 else "articles"}</span></div>'
+            + (f'<p class="lead">{esc(g["sub"])}</p>' if g.get("sub") else ""))
+        body = head
+        if feat and pp.get("feature_image"):
+            body += _press_feature(feat, pp)
+        body += f'<div class="press-list">{cards}</div>'
+        tone = " section--tint" if g.get("tone") == "tint" else ""
+        sections.append(
+            f'<section class="section{tone}"><div class="wrap">{body}</div>'
+            f'</section>')
+    hero = (
+        f'<section class="press-hero"><div class="wrap">'
+        f'<p class="eyebrow">{esc(pp.get("eyebrow", "Press"))}</p>'
+        f'<h1>{esc(pp.get("heading", "Press"))}</h1>'
+        + (f'<p class="lead">{esc(pp["sub"])}</p>' if pp.get("sub") else "")
+        + f'</div></section>')
     write_page("/press/", f"Press — {ARTIST['name']}",
                f"Press coverage and recognition for {ARTIST['name']}: "
                f"Vogue, WWD, The New York Times, CNN, and more.",
-               body, active="/press/")
+               hero + "".join(sections), active="/press/")
 
 
 def news_figure(img):

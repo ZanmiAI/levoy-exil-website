@@ -36,3 +36,11 @@ every time something is finished or added — nothing falls through the cracks.
 - [x] News section with two article title pages staged ("Still Painting at 81", Hearst collaboration)
 - [x] Both news articles published in full with photos (2026-09-20)
 - [x] Site pushed to GitHub (main + gh-pages preview)
+
+## 2026-09-20 ~11:05 PM ET — fixed unstyled preview (Daphnee reported "just writings")
+- Root cause: all internal links used root-relative paths (/assets/...) which 404'd
+  on the GitHub Pages project subpath, so no CSS/JS/images/nav loaded.
+- Fix: site.json gained a Jekyll-style "baseurl" ("/levoy-exil-website"); page_html
+  prefixes href/src when set. At production cutover set baseurl to "" and rebuild.
+- Validation now fails the build if bare root-relative URLs remain (regression guard).
+- Deployed main 60f4498 / gh-pages a4378b4; live-verified CSS, JS, hero, press, gallery all 200.
