@@ -141,3 +141,10 @@ every time something is finished or added — nothing falls through the cracks.
   2.5rem to 4rem so the brand column (logo/tagline/description) no longer sits tight
   against Explore. Columns stay equal width, spacing consistent. Pushed main + gh-pages
   56d5f44, live-verified the CSS.
+- [x] SEO/AEO buyer-intent pass (2026-09-21): per Daphnee — researched international
+  buyer language (1stDibs, haitianpaintings.com, Nader, Etsy, Chairish). Gallery title
+  now "Original Haitian Paintings for Sale", buyer-intent meta descriptions on gallery +
+  artwork pages ("original Haitian painting"), homepage meta/llms.txt lead with "Buy
+  original Haitian paintings", 4 new FAQ entries (where to buy, originals vs prints,
+  international shipping, authenticity) feeding FAQ JSON-LD for answer engines. Pushed
+  main + gh-pages 51ab601, live-verified gallery title + new FAQ on preview.
