@@ -293,6 +293,8 @@ def site_header(active="/"):
     logo_alt = BRANDING.get("header_logo_alt", f"{ARTIST['name']} logo")
     items = []
     for n in CFG["nav"]:
+        if n.get("footer_only"):
+            continue  # legal pages live in the footer only, not the header
         cur = ' aria-current="page"' if n["url"] == active else ""
         items.append(
             f'<li><a href="{esc(n["url"])}"{cur}>{esc(n["label"])}</a></li>')

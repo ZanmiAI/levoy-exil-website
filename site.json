@@ -193,11 +193,13 @@
     },
     {
       "label": "Privacy",
-      "url": "/privacy/"
+      "url": "/privacy/",
+      "footer_only": true
     },
     {
       "label": "Delivery & Returns",
-      "url": "/delivery-returns/"
+      "url": "/delivery-returns/",
+      "footer_only": true
     }
   ],
   "hero": {
