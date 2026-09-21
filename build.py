@@ -320,9 +320,12 @@ def social_links():
 
 
 def site_footer():
-    nav_items = "".join(
+    explore_items = "".join(
         f'<li><a href="{esc(n["url"])}">{esc(n["label"])}</a></li>'
-        for n in CFG["nav"])
+        for n in CFG["nav"] if not n.get("footer_only"))
+    info_items = "".join(
+        f'<li><a href="{esc(n["url"])}">{esc(n["label"])}</a></li>'
+        for n in CFG["nav"] if n.get("footer_only"))
     return f"""<footer class="site-footer">
 <div class="wrap footer-inner">
 <div class="footer-brand">
@@ -334,7 +337,11 @@ def site_footer():
 </div>
 <nav class="footer-nav" aria-label="Footer navigation">
 <h3>Explore</h3>
-<ul>{nav_items}</ul>
+<ul>{explore_items}</ul>
+</nav>
+<nav class="footer-nav" aria-label="Footer information">
+<h3>Information</h3>
+<ul>{info_items}</ul>
 </nav>
 <div class="footer-contact">
 <h3>Contact</h3>
