@@ -46,6 +46,7 @@ OUT = os.path.join(ROOT, "public")
 SRC_DIR = os.path.expanduser(ASSETS.get("source_dir", ""))
 PRODUCTS_SRC = os.path.join(SRC_DIR, ASSETS.get("artworks_dir", "products"))
 SITE_SRC = os.path.join(SRC_DIR, ASSETS.get("site_dir", "site"))
+GALLERY_SRC = os.path.join(SRC_DIR, "old-site-photos", "files")
 
 
 # ---------------------------------------------------------------- helpers ---
@@ -96,6 +97,10 @@ def rel_art_img(a):
 
 def rel_art_lifestyle(a):
     return f"assets/img/artworks/{a['slug']}-lifestyle.jpg"
+
+
+def rel_art_gallery(a, i):
+    return f"assets/img/artworks/gallery/{a['slug']}-{i}.jpg"
 
 
 def rel_art_thumb(a):
@@ -180,6 +185,16 @@ def process_images():
                      1200, a_q)
     n_life = sum(1 for a in CFG["artworks"] if a.get("lifestyle_image"))
     print(f"  {len(CFG['artworks'])} artworks x2 sizes + {n_life} lifestyle photos")
+    n_gal = 0
+    for a in CFG["artworks"]:
+        for i, gfile in enumerate(a.get("gallery", [])):
+            gsrc = os.path.join(GALLERY_SRC, gfile)
+            if not os.path.exists(gsrc):
+                raise SystemExit(f"MISSING artwork gallery image: {gsrc}")
+            save_jpg(Image.open(gsrc), os.path.join(OUT, rel_art_gallery(a, i)),
+                     1200, 80)
+            n_gal += 1
+    print(f"  {n_gal} old-site gallery photos")
     for job in ASSETS.get("site_images", []):
         src = os.path.join(SITE_SRC, job["src"])
         if not os.path.exists(src):
@@ -975,6 +990,28 @@ def build_artwork(a, prev_a, next_a):
                      f'alt="{esc(a["title"])} by {esc(ARTIST["name"])}, shown framed in a home setting">'
                      f'<figcaption>In your home — a framed display of <em>{esc(a["title"])}</em></figcaption>'
                      f'</figure>')
+    gallery = ""
+    if a.get("gallery"):
+        figs = []
+        for i, _gfile in enumerate(a["gallery"]):
+            if i == 0:
+                alt = (f'{a["title"]} \u2014 photograph of the original '
+                       f'{a["medium"].lower()} painting by {ARTIST["name"]}')
+                cap = "Photograph of the original canvas"
+            else:
+                alt = (f'{a["title"]} by {ARTIST["name"]}, '
+                       f'shown framed in a home interior')
+                cap = "Styled in a home interior"
+            figs.append(
+                f'<figure><img src="/{rel_art_gallery(a, i)}" loading="lazy" '
+                f'alt="{esc(alt)}"><figcaption>{cap}</figcaption></figure>')
+        gallery = (
+            f'<section class="artwork-gallery" aria-label="More photos">'
+            f'<h2>More photos of <em>{esc(a["title"])}</em></h2>'
+            f'<p class="gallery-sub">See how this painting could look on your '
+            f'walls \u2014 photographs from the gallery.</p>'
+            f'<div class="artwork-gallery-grid">{"".join(figs)}</div>'
+            f'</section>')
     body = f"""<div class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/gallery/">Gallery</a> \u00b7 {esc(a['title'])}</nav>
 <section class="section"><div class="artwork-layout">
@@ -1001,6 +1038,7 @@ def build_artwork(a, prev_a, next_a):
 </div>
 </div>
 </div>
+{gallery}
 <div class="artwork-nav">{''.join(nav)}</div>
 </section></div>"""
     desc = (f"{a['title']}: an original {a['medium'].lower()} painting "
