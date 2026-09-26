@@ -110,6 +110,11 @@ def rel_art_img(a):
 
 
 def rel_art_lifestyle(a):
+    li = a.get("lifestyle_image") or ""
+    # Second varied room-display set: keep the distinct -alt output name so the
+    # page references the alt file. All other artworks keep their legacy path.
+    if li.endswith("-lifestyle-alt.jpg"):
+        return f"assets/img/artworks/{os.path.basename(li)}"
     return f"assets/img/artworks/{a['slug']}-lifestyle.jpg"
 
 
@@ -1207,6 +1212,11 @@ def build_pages():
     for e in CFG.get("editions", []):
         build_edition(e)
     build_404()
+    # Custom domain must survive every rebuild + push: without this file on the
+    # published branch, GitHub Pages drops levoyexil.com (outage 2026-09-26).
+    cname = CFG.get("site", {}).get("cname", "levoyexil.com")
+    with open(os.path.join(OUT, "CNAME"), "w", encoding="utf-8") as fh:
+        fh.write(cname.strip() + "\n")
     print(f"  home + gallery + editions + exhibitions + 2 policy pages + "
           f"{len(arts)} artworks + {len(CFG.get('editions', []))} editions + 404")
 

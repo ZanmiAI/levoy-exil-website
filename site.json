@@ -20,7 +20,8 @@
     "description": "Buy original Haitian paintings by Levoy Exil, renowned Haitian painter of the Saint Soleil movement. Browse 42 one-of-a-kind acrylic paintings, exhibition history, and enquire directly via WhatsApp or email.",
     "base_url": "https://levoyexil.com",
     "baseurl": "",
-    "lang": "en"
+    "lang": "en",
+    "cname": "levoyexil.com"
   },
   "theme": {
     "colors": {
@@ -2213,7 +2214,7 @@
       "dimensions": "33 x 60 inches",
       "source_image": "solbolum-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "solbolum-lifestyle.jpg"
+      "lifestyle_image": "solbolum-lifestyle-alt.jpg"
     },
     {
       "slug": "sahlicum",
@@ -2224,7 +2225,7 @@
       "dimensions": "30 x 40 inches",
       "source_image": "sahlicum-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "sahlicum-lifestyle.jpg"
+      "lifestyle_image": "sahlicum-lifestyle-alt.jpg"
     },
     {
       "slug": "bafalum",
@@ -2235,7 +2236,7 @@
       "dimensions": "30 x 40 inches",
       "source_image": "bafalum-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "bafalum-lifestyle.jpg"
+      "lifestyle_image": "bafalum-lifestyle-alt.jpg"
     },
     {
       "slug": "lisacumba",
@@ -2246,7 +2247,7 @@
       "dimensions": "36 x 50 inches",
       "source_image": "lisacumba-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "lisacumba-lifestyle.jpg"
+      "lifestyle_image": "lisacumba-lifestyle-alt.jpg"
     },
     {
       "slug": "silfocumba",
@@ -2257,7 +2258,7 @@
       "dimensions": "30 x 40 inches",
       "source_image": "silfocumba-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "silfocumba-lifestyle.jpg"
+      "lifestyle_image": "silfocumba-lifestyle-alt.jpg"
     },
     {
       "slug": "fofallum",
@@ -2268,7 +2269,7 @@
       "dimensions": "30 x 40 inches",
       "source_image": "fofallum-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "fofallum-lifestyle.jpg"
+      "lifestyle_image": "fofallum-lifestyle-alt.jpg"
     },
     {
       "slug": "cumbatal",
@@ -2279,7 +2280,7 @@
       "dimensions": "30 x 40 inches",
       "source_image": "cumbatal-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "cumbatal-lifestyle.jpg"
+      "lifestyle_image": "cumbatal-lifestyle-alt.jpg"
     },
     {
       "slug": "shelota",
@@ -2290,7 +2291,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "shelota-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "shelota-lifestyle.jpg"
+      "lifestyle_image": "shelota-lifestyle-alt.jpg"
     },
     {
       "slug": "shalun",
@@ -2301,7 +2302,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "shalun-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "shalun-lifestyle.jpg"
+      "lifestyle_image": "shalun-lifestyle-alt.jpg"
     },
     {
       "slug": "sholanda",
@@ -2311,7 +2312,7 @@
       "medium": "Acrylic on Canvas",
       "dimensions": "12 x 32 inches",
       "source_image": "sholanda-primary.jpg",
-      "lifestyle_image": "sholanda-lifestyle.jpg"
+      "lifestyle_image": "sholanda-lifestyle-alt.jpg"
     },
     {
       "slug": "solcumse",
@@ -2322,7 +2323,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "solcumse-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "solcumse-lifestyle.jpg"
+      "lifestyle_image": "solcumse-lifestyle-alt.jpg"
     },
     {
       "slug": "pinolum",
@@ -2333,7 +2334,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "pinolum-primary.jpg",
       "year": 2021,
-      "lifestyle_image": "pinolum-lifestyle.jpg"
+      "lifestyle_image": "pinolum-lifestyle-alt.jpg"
     },
     {
       "slug": "katum",
@@ -2344,7 +2345,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "katum-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "katum-lifestyle.jpg"
+      "lifestyle_image": "katum-lifestyle-alt.jpg"
     },
     {
       "slug": "relam",
@@ -2355,7 +2356,7 @@
       "dimensions": "16 x 24 inches",
       "source_image": "relam-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "relam-lifestyle.jpg"
+      "lifestyle_image": "relam-lifestyle-alt.jpg"
     },
     {
       "slug": "detafa",
@@ -2366,7 +2367,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "detafa-primary.jpg",
       "year": 2023,
-      "lifestyle_image": "detafa-lifestyle.jpg"
+      "lifestyle_image": "detafa-lifestyle-alt.jpg"
     },
     {
       "slug": "colida",
@@ -2377,7 +2378,7 @@
       "dimensions": "4 x 32 inches",
       "source_image": "colida-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "colida-lifestyle.jpg"
+      "lifestyle_image": "colida-lifestyle-alt.jpg"
     },
     {
       "slug": "reasal",
@@ -2388,7 +2389,7 @@
       "dimensions": "7 x 30 inches",
       "source_image": "reasal-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "reasal-lifestyle.jpg"
+      "lifestyle_image": "reasal-lifestyle-alt.jpg"
     },
     {
       "slug": "zedame",
@@ -2398,7 +2399,7 @@
       "medium": "Acrylic on Canvas",
       "dimensions": "12 x 32 inches",
       "source_image": "zedame-primary.jpg",
-      "lifestyle_image": "zedame-lifestyle.jpg"
+      "lifestyle_image": "zedame-lifestyle-alt.jpg"
     },
     {
       "slug": "coldame",
@@ -2409,7 +2410,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "coldame-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "coldame-lifestyle.jpg"
+      "lifestyle_image": "coldame-lifestyle-alt.jpg"
     },
     {
       "slug": "seloma",
@@ -2420,7 +2421,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "seloma-primary.jpg",
       "year": 2023,
-      "lifestyle_image": "seloma-lifestyle.jpg"
+      "lifestyle_image": "seloma-lifestyle-alt.jpg"
     },
     {
       "slug": "faisol",
@@ -2430,7 +2431,7 @@
       "medium": "Acrylic on Canvas",
       "dimensions": "12 x 12 inches",
       "source_image": "faisol-primary.jpg",
-      "lifestyle_image": "faisol-lifestyle.jpg"
+      "lifestyle_image": "faisol-lifestyle-alt.jpg"
     },
     {
       "slug": "cotasol",
@@ -2441,7 +2442,7 @@
       "dimensions": "10 x 50 inches",
       "source_image": "cotasol-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "cotasol-lifestyle.jpg"
+      "lifestyle_image": "cotasol-lifestyle-alt.jpg"
     },
     {
       "slug": "solamefa",
@@ -2452,7 +2453,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "solamefa-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "solamefa-lifestyle.jpg"
+      "lifestyle_image": "solamefa-lifestyle-alt.jpg"
     },
     {
       "slug": "desolfa",
@@ -2463,7 +2464,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "desolfa-primary.jpg",
       "year": 2024,
-      "lifestyle_image": "desolfa-lifestyle.jpg"
+      "lifestyle_image": "desolfa-lifestyle-alt.jpg"
     },
     {
       "slug": "noideka",
@@ -2474,7 +2475,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "noideka-primary.jpg",
       "year": 2023,
-      "lifestyle_image": "noideka-lifestyle.jpg"
+      "lifestyle_image": "noideka-lifestyle-alt.jpg"
     },
     {
       "slug": "decasol",
@@ -2485,7 +2486,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "decasol-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "decasol-lifestyle.jpg"
+      "lifestyle_image": "decasol-lifestyle-alt.jpg"
     },
     {
       "slug": "desate",
@@ -2496,7 +2497,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "desate-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "desate-lifestyle.jpg"
+      "lifestyle_image": "desate-lifestyle-alt.jpg"
     },
     {
       "slug": "mansolfa",
@@ -2507,7 +2508,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "mansolfa-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "mansolfa-lifestyle.jpg"
+      "lifestyle_image": "mansolfa-lifestyle-alt.jpg"
     },
     {
       "slug": "ralensa",
@@ -2518,7 +2519,7 @@
       "dimensions": "12 x 12 inches",
       "source_image": "ralensa-primary.jpg",
       "year": 2026,
-      "lifestyle_image": "ralensa-lifestyle.jpg"
+      "lifestyle_image": "ralensa-lifestyle-alt.jpg"
     },
     {
       "slug": "ketafam",
@@ -2529,7 +2530,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "ketafam-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "ketafam-lifestyle.jpg"
+      "lifestyle_image": "ketafam-lifestyle-alt.jpg"
     },
     {
       "slug": "facosa",
@@ -2540,7 +2541,7 @@
       "dimensions": "12 x 32 inches",
       "source_image": "facosa-primary.jpg",
       "year": 2025,
-      "lifestyle_image": "facosa-lifestyle.jpg"
+      "lifestyle_image": "facosa-lifestyle-alt.jpg"
     }
   ],
   "editions": [
