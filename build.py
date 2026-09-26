@@ -1223,6 +1223,7 @@ def build_pages():
     build_press_page()
     build_prose("privacy", "/privacy/", "/privacy/")
     build_prose("delivery", "/delivery-returns/", "/delivery-returns/")
+    build_prose("newsletter_thanks", "/newsletter-thanks/", "/")
     arts = CFG["artworks"]
     for i, a in enumerate(arts):
         prev_a = arts[i - 1] if i > 0 else None

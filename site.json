@@ -478,6 +478,10 @@
         "type": "faq"
       },
       {
+        "type": "html",
+        "html": "<section class=\"section\" id=\"newsletter\"><div class=\"wrap\"><div class=\"nl-card\"><p class=\"eyebrow\">Newsletter</p><h2>Never miss a new painting</h2><p class=\"lead\">New originals, exhibitions, and stories from Levoy’s studio — straight to your inbox. One email now and then, never spam.</p><form class=\"nl-form\" action=\"https://formsubmit.co/levoyexilgallery@gmail.com\" method=\"POST\"><input type=\"email\" name=\"email\" class=\"nl-input\" placeholder=\"Your email address\" required aria-label=\"Email address\"><input type=\"text\" name=\"_honey\" style=\"display:none\" tabindex=\"-1\" autocomplete=\"off\"><input type=\"hidden\" name=\"_subject\" value=\"New newsletter signup — levoyexil.com\"><input type=\"hidden\" name=\"_captcha\" value=\"false\"><input type=\"hidden\" name=\"_template\" value=\"table\"><input type=\"hidden\" name=\"_next\" value=\"https://levoyexil.com/newsletter-thanks/\"><button type=\"submit\" class=\"btn btn--primary\">Subscribe</button></form><p class=\"nl-note\">We only use your email for the newsletter. Unsubscribe anytime.</p></div></div></section>"
+      },
+      {
         "type": "contact"
       }
     ]
@@ -1273,6 +1277,20 @@
           "body": [
             "If a painting arrives damaged or is not as described, contact the gallery within 30 days of delivery at levoyexilgallery@gmail.com.",
             "Undamaged pieces in their original condition and packaging may be returned within 30 days of delivery. Return shipping is paid by the buyer unless the gallery made an error. Refunds exclude the original delivery fees."
+          ]
+        }
+      ]
+    },
+    "newsletter_thanks": {
+      "title": "You’re subscribed!",
+      "description": "Thanks for subscribing to the Levoy Exil newsletter — new originals, exhibitions, and stories from the studio.",
+      "intro": "Welcome to the list.",
+      "sections": [
+        {
+          "heading": "What happens next",
+          "body": [
+            "You’ll hear from us when new original paintings arrive, when Levoy exhibits, and when there’s news from the studio.",
+            "We send one email now and then — never spam. You can unsubscribe at any time."
           ]
         }
       ]
