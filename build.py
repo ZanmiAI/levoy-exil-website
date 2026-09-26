@@ -374,7 +374,7 @@ def site_footer():
 <div class="footer-contact">
 <h3>Contact</h3>
 <p>Email: <a href="mailto:{esc(CONTACT['email'])}">{esc(CONTACT['email'])}</a><br>
-WhatsApp: <a href="{esc(wa_general())}">{esc(CONTACT['whatsapp_display'])}</a><br>
+Message us on <a href="{esc(wa_general())}">WhatsApp</a><br>
 {esc(CONTACT['hours'])}</p>
 <div class="social-row">{social_links()}</div>
 </div>
@@ -531,7 +531,7 @@ def sec_contact(sec):
 <h2>{esc(c['heading'])}</h2>
 <p class="lead">{esc(c['text'])}</p>
 <div class="btn-row center">
-<a class="btn btn--whatsapp" href="{esc(wa_general())}">WhatsApp {esc(CONTACT['whatsapp_display'])}</a>
+<a class="btn btn--whatsapp" href="{esc(wa_general())}">WhatsApp us</a>
 <a class="btn btn--light" href="mailto:{esc(CONTACT['email'])}">Email {esc(CONTACT['email'])}</a>
 </div>
 <ul class="contact-lines"><li>{esc(CONTACT['hours'])}</li></ul>
@@ -1081,7 +1081,7 @@ def build_artwork(a, prev_a, next_a):
 <h2>Enquire about this painting</h2>
 <p>Every sale is arranged personally \u2014 message the gallery and we\u2019ll confirm availability, shipping, and payment.</p>
 <div class="btn-row">
-<a class="btn btn--whatsapp" href="{esc(wa_artwork(a['title'], a['price']))}">WhatsApp {esc(CONTACT['whatsapp_display'])}</a>
+<a class="btn btn--whatsapp" href="{esc(wa_artwork(a['title'], a['price']))}">WhatsApp us</a>
 <a class="btn btn--outline" href="{esc(mail_artwork(a['title'], a['price']))}">Email the gallery</a>
 </div>
 </div>
@@ -1293,8 +1293,7 @@ def write_llms_txt():
         "## Buying an original",
         "- There is no online checkout. Every piece is a one-of-a-kind "
         "original sold through direct enquiry.",
-        f"- WhatsApp: {CONTACT['whatsapp_display']} "
-        f"({CONTACT['whatsapp_base']})",
+        f"- WhatsApp: message us at {CONTACT['whatsapp_base']}",
         f"- Email: {CONTACT['email']}",
         f"- Hours: {CONTACT['hours']}.",
         "",
