@@ -1073,6 +1073,105 @@ def build_artwork(a, prev_a, next_a):
                extra_head=artwork_jsonld(a, path))
 
 
+# ------------------------------------------------- collector editions ---
+# Numbered limited editions live on the gallery side as the bridge between
+# the one-of-a-kind originals and the Studio Shop. They are configured in
+# site.json under "editions" — each edition links back to its original
+# painting's gallery page and sells through the Studio store.
+def edition_jsonld(e, path):
+    # NOTE: Product, never VisualArtwork — an edition is a Levoy Exil design
+    # adapted from the original, not the original artwork itself.
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": f"{e['title']} \u2014 {e['edition_label']}",
+        "image": BASE + "/" + e["image"],
+        "description": (f"Numbered limited-edition print (edition of "
+                        f"{e['edition_size']}) adapted from the original "
+                        f"painting {e['title']} by {ARTIST['name']}."),
+        "brand": {"@type": "Brand", "name": STUDIO["name"]},
+        "offers": {
+            "@type": "Offer",
+            "price": e["price"],
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+        },
+    }
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, indent=2, ensure_ascii=False) + "\n</script>")
+
+
+def edition_card_html(e):
+    return f"""<a class="card" href="/editions/{e['slug']}/">
+<div class="card-media"><img src="/{esc(e['image'])}" alt="{esc(e['image_alt'])}" loading="lazy"></div>
+<div class="card-body">
+<h3 class="card-title">{esc(e['title'])} \u2014 {esc(e['edition_label'])}</h3>
+<p class="card-meta">Numbered edition of {e['edition_size']} \u00b7 {esc(e['dimensions'])}</p>
+<div class="card-foot"><span class="price">{money(e['price'])}</span><span class="badge badge--in">Available</span></div>
+</div></a>"""
+
+
+def build_editions():
+    eds = CFG.get("editions", [])
+    cards = "".join(edition_card_html(e) for e in eds)
+    body = f"""<div class="wrap"><section class="section">
+<p class="eyebrow">Collector editions</p>
+<h1>Limited Editions</h1>
+<p class="lead">Numbered, limited-edition prints adapted from {esc(ARTIST['name'])}\u2019s original paintings \u2014 the bridge between the one-of-a-kind gallery originals and the Studio Shop. Every edition is strictly limited, arrives with a numbered Certificate of Authenticity, and is permanently retired at sellout.</p>
+<div class="grid grid--cards">{cards}</div>
+</section></div>"""
+    write_page("/editions/",
+               f"Limited Editions \u2014 Numbered Prints by {ARTIST['name']}",
+               f"Numbered limited-edition prints adapted from original "
+               f"paintings by {ARTIST['name']}: strictly limited, each with a "
+               f"numbered certificate, retired permanently at sellout.",
+               body, active="/editions/")
+
+
+def build_edition(e):
+    path = f"/editions/{e['slug']}/"
+    about = "".join(f"<p>{p}</p>" for p in e["about"])
+    body = f"""<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/editions/">Editions</a> \u00b7 {esc(e['title'])} \u2014 {esc(e['edition_label'])}</nav>
+<section class="section"><div class="artwork-layout">
+<div class="artwork-media"><img src="/{esc(e['image'])}" alt="{esc(e['image_alt'])}" fetchpriority="high"></div>
+<div class="artwork-info">
+<p class="eyebrow">Collector edition</p>
+<h1>{esc(e['title'])} \u2014 {esc(e['edition_label'])}</h1>
+<p class="lead">{esc(e['blurb'])}</p>
+<p class="price" style="font-size:1.6rem">{money(e['price'])}</p>
+<div class="artwork-status"><span class="badge badge--in">Available \u2014 edition of {e['edition_size']}</span></div>
+<table class="spec-table">
+<tr><th>Edition</th><td>Numbered edition of {e['edition_size']}</td></tr>
+<tr><th>Medium</th><td>{esc(e['medium'])}</td></tr>
+<tr><th>Dimensions</th><td>{esc(e['dimensions'])}</td></tr>
+<tr><th>Print</th><td>Unsigned and unnumbered</td></tr>
+<tr><th>Certificate</th><td>Numbered digital Certificate of Authenticity (No. X of {e['edition_size']}), emailed after purchase</td></tr>
+</table>
+<div class="enquiry-box">
+<h2>Purchase this edition</h2>
+<p>Sold through the {esc(STUDIO['name'])} shop \u2014 your purchase opens the Studio store, where the edition is fulfilled and your numbered certificate is issued.</p>
+<div class="btn-row">
+<a class="btn btn--primary" href="{esc(e['purchase_url'])}">Purchase \u2014 {money(e['price'])}</a>
+<a class="btn btn--outline" href="/artwork/{esc(e['artwork_slug'])}/">See the original painting</a>
+</div>
+</div>
+</div>
+</div>
+<section class="artwork-gallery" aria-label="About this edition">
+<h2>About this edition</h2>
+{about}
+</section>
+</section></div>"""
+    desc = (f"{e['title']} \u2014 {e['edition_label']}: a numbered "
+            f"limited-edition print ({e['dimensions']}) adapted from the "
+            f"original painting by {ARTIST['name']}, {money(e['price'])}. "
+            f"Numbered certificate emailed after purchase; retired at sellout.")
+    write_page(path, f"{e['title']} \u2014 {e['edition_label']} by {ARTIST['name']}",
+               desc, body, active="/editions/", og_image=e["image"],
+               extra_head=edition_jsonld(e, path))
+
+
 def build_404():
     body = """<div class="wrap"><section class="section notfound">
 <h1>404</h1>
@@ -1104,16 +1203,20 @@ def build_pages():
         prev_a = arts[i - 1] if i > 0 else None
         next_a = arts[i + 1] if i < len(arts) - 1 else None
         build_artwork(a, prev_a, next_a)
+    build_editions()
+    for e in CFG.get("editions", []):
+        build_edition(e)
     build_404()
-    print(f"  home + gallery + exhibitions + 2 policy pages + "
-          f"{len(arts)} artworks + 404")
+    print(f"  home + gallery + editions + exhibitions + 2 policy pages + "
+          f"{len(arts)} artworks + {len(CFG.get('editions', []))} editions + 404")
 
 
 # ------------------------------------------------------ sitemap/robots ---
 def write_sitemap():
-    urls = ["/", "/gallery/", "/exhibitions/", "/news/", "/press/", "/privacy/",
+    urls = ["/", "/gallery/", "/editions/", "/exhibitions/", "/news/", "/press/", "/privacy/",
             "/delivery-returns/"]
     urls += [f"/artwork/{a['slug']}/" for a in CFG["artworks"]]
+    urls += [f"/editions/{e['slug']}/" for e in CFG.get("editions", [])]
     urls += [f"/news/{a['slug']}/" for a in published_articles()]
     items = "\n".join(
         f"  <url><loc>{BASE}{u}</loc><lastmod>{BUILD_DATE}</lastmod></url>"
@@ -1165,8 +1268,15 @@ def write_llms_txt():
         f"- Email: {CONTACT['email']}",
         f"- Hours: {CONTACT['hours']}.",
         "",
+        "## Limited editions",
+        "- Numbered limited-edition prints adapted from original paintings "
+        "(the gallery-side bridge to the Studio Shop).",
+        "- Every buyer receives a numbered digital Certificate of "
+        "Authenticity by email; editions retire permanently at sellout and "
+        "are never reprinted.",
+        "- Edition purchases complete through the Zanmi Studio shop.",
+        "",
         "## Official links",
-        f"- Website: {BASE}/",
         f"- Instagram: {CONTACT['instagram']}",
         f"- Facebook: {CONTACT['facebook']}",
         f"- YouTube: {CONTACT['youtube']}",
@@ -1174,6 +1284,14 @@ def write_llms_txt():
         "https://art.state.gov/personnel/levoy_exil",
         "",
     ]
+    ed_lines = []
+    for e in CFG.get("editions", []):
+        ed_lines.append(
+            f"- {e['title']} \u2014 {e['edition_label']} ({money(e['price'])}): "
+            f"{BASE}/editions/{e['slug']}/")
+    if ed_lines:
+        idx = lines.index("## Official links")
+        lines[idx:idx] = ed_lines + [""]
     write_out("llms.txt", "\n".join(lines))
     print("  llms.txt")
 
@@ -1199,12 +1317,13 @@ def validate():
 
     art_pages = {k: v for k, v in html_pages.items()
                  if k.startswith("artwork/")}
-    check("42 artwork pages generated", len(art_pages) == 42,
+    n_art = len(CFG["artworks"])
+    check(f"{n_art} artwork pages generated", len(art_pages) == n_art,
           f"found {len(art_pages)}")
 
     gal = html_pages.get(os.path.join("gallery", "index.html"), "")
     n_cards = gal.count('class="card"')
-    check("42 cards on gallery page", n_cards == 42, f"found {n_cards}")
+    check(f"{n_art} cards on gallery page", n_cards == n_art, f"found {n_cards}")
 
     exh = html_pages.get(os.path.join("exhibitions", "index.html"), "")
     n_exh = exh.count('class="exhib-year"')
@@ -1255,7 +1374,7 @@ def validate():
         subj = quote(f"Enquiry about \u201c{a['title']}\u201d")
         if f"mailto:{email}?subject=" not in pg or subj not in pg:
             bad_enq.append(a["slug"] + ":email")
-    check("WhatsApp + email enquiry links name the artwork (all 42)",
+    check(f"WhatsApp + email enquiry links name the artwork (all {n_art})",
           not bad_enq, f"bad: {bad_enq[:6]}")
 
     sold_pages = [v for v in art_pages.values() if "badge--out" in v]
@@ -1294,7 +1413,8 @@ def validate():
           f"{bad_ld[:4]}")
 
     sm_path = os.path.join(OUT, "sitemap.xml")
-    n_expected = (7 + len(CFG["artworks"]) + len(published_articles()))
+    n_expected = (8 + len(CFG["artworks"]) + len(CFG.get("editions", []))
+                  + len(published_articles()))
     sm_ok = (os.path.exists(sm_path)
              and open(sm_path, encoding="utf-8").read().count("<loc>")
              == n_expected)

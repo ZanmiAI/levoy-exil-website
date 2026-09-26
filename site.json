@@ -180,6 +180,10 @@
       "url": "/gallery/"
     },
     {
+      "label": "Editions",
+      "url": "/editions/"
+    },
+    {
       "label": "Exhibitions",
       "url": "/exhibitions/"
     },
@@ -2198,6 +2202,365 @@
         "falcumda-106.jpg",
         "falcumda-108.png",
         "falcumda-109.png"
+      ]
+    },
+    {
+      "slug": "solbolum",
+      "title": "Solbolum",
+      "price": 2800,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "33 x 60 inches",
+      "source_image": "solbolum-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "solbolum-lifestyle.jpg"
+    },
+    {
+      "slug": "sahlicum",
+      "title": "SAhli Cum",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 40 inches",
+      "source_image": "sahlicum-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "sahlicum-lifestyle.jpg"
+    },
+    {
+      "slug": "bafalum",
+      "title": "BAfalum",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 40 inches",
+      "source_image": "bafalum-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "bafalum-lifestyle.jpg"
+    },
+    {
+      "slug": "lisacumba",
+      "title": "Lisacumba",
+      "price": 2600,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "36 x 50 inches",
+      "source_image": "lisacumba-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "lisacumba-lifestyle.jpg"
+    },
+    {
+      "slug": "silfocumba",
+      "title": "Silfocumba",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 40 inches",
+      "source_image": "silfocumba-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "silfocumba-lifestyle.jpg"
+    },
+    {
+      "slug": "fofallum",
+      "title": "Fofallum",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 40 inches",
+      "source_image": "fofallum-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "fofallum-lifestyle.jpg"
+    },
+    {
+      "slug": "cumbatal",
+      "title": "Cumbatal",
+      "price": 2000,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "30 x 40 inches",
+      "source_image": "cumbatal-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "cumbatal-lifestyle.jpg"
+    },
+    {
+      "slug": "shelota",
+      "title": "Shelota",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "shelota-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "shelota-lifestyle.jpg"
+    },
+    {
+      "slug": "shalun",
+      "title": "Shalun",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "shalun-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "shalun-lifestyle.jpg"
+    },
+    {
+      "slug": "sholanda",
+      "title": "Sholanda",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "sholanda-primary.jpg",
+      "lifestyle_image": "sholanda-lifestyle.jpg"
+    },
+    {
+      "slug": "solcumse",
+      "title": "Solcumsé",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "solcumse-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "solcumse-lifestyle.jpg"
+    },
+    {
+      "slug": "pinolum",
+      "title": "Pino Lum",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "pinolum-primary.jpg",
+      "year": 2021,
+      "lifestyle_image": "pinolum-lifestyle.jpg"
+    },
+    {
+      "slug": "katum",
+      "title": "Katum",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "katum-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "katum-lifestyle.jpg"
+    },
+    {
+      "slug": "relam",
+      "title": "Relam",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "16 x 24 inches",
+      "source_image": "relam-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "relam-lifestyle.jpg"
+    },
+    {
+      "slug": "detafa",
+      "title": "Detafa",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "detafa-primary.jpg",
+      "year": 2023,
+      "lifestyle_image": "detafa-lifestyle.jpg"
+    },
+    {
+      "slug": "colida",
+      "title": "Colida",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "4 x 32 inches",
+      "source_image": "colida-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "colida-lifestyle.jpg"
+    },
+    {
+      "slug": "reasal",
+      "title": "Reasal",
+      "price": 300,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "7 x 30 inches",
+      "source_image": "reasal-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "reasal-lifestyle.jpg"
+    },
+    {
+      "slug": "zedame",
+      "title": "Zedame",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "zedame-primary.jpg",
+      "lifestyle_image": "zedame-lifestyle.jpg"
+    },
+    {
+      "slug": "coldame",
+      "title": "Coldame",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "coldame-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "coldame-lifestyle.jpg"
+    },
+    {
+      "slug": "seloma",
+      "title": "Seloma",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "seloma-primary.jpg",
+      "year": 2023,
+      "lifestyle_image": "seloma-lifestyle.jpg"
+    },
+    {
+      "slug": "faisol",
+      "title": "Faisol",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "faisol-primary.jpg",
+      "lifestyle_image": "faisol-lifestyle.jpg"
+    },
+    {
+      "slug": "cotasol",
+      "title": "Cotasol",
+      "price": 600,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "10 x 50 inches",
+      "source_image": "cotasol-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "cotasol-lifestyle.jpg"
+    },
+    {
+      "slug": "solamefa",
+      "title": "Solamefa",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "solamefa-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "solamefa-lifestyle.jpg"
+    },
+    {
+      "slug": "desolfa",
+      "title": "Desolfa",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "desolfa-primary.jpg",
+      "year": 2024,
+      "lifestyle_image": "desolfa-lifestyle.jpg"
+    },
+    {
+      "slug": "noideka",
+      "title": "Noideka",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "noideka-primary.jpg",
+      "year": 2023,
+      "lifestyle_image": "noideka-lifestyle.jpg"
+    },
+    {
+      "slug": "decasol",
+      "title": "Decasol",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "decasol-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "decasol-lifestyle.jpg"
+    },
+    {
+      "slug": "desate",
+      "title": "Desate",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "desate-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "desate-lifestyle.jpg"
+    },
+    {
+      "slug": "mansolfa",
+      "title": "Mansolfa",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "mansolfa-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "mansolfa-lifestyle.jpg"
+    },
+    {
+      "slug": "ralensa",
+      "title": "Ralensa",
+      "price": 250,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 12 inches",
+      "source_image": "ralensa-primary.jpg",
+      "year": 2026,
+      "lifestyle_image": "ralensa-lifestyle.jpg"
+    },
+    {
+      "slug": "ketafam",
+      "title": "Ketafam",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "ketafam-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "ketafam-lifestyle.jpg"
+    },
+    {
+      "slug": "facosa",
+      "title": "Facosa",
+      "price": 400,
+      "availability": "in",
+      "medium": "Acrylic on Canvas",
+      "dimensions": "12 x 32 inches",
+      "source_image": "facosa-primary.jpg",
+      "year": 2025,
+      "lifestyle_image": "facosa-lifestyle.jpg"
+    }
+  ],
+  "editions": [
+    {
+      "slug": "besolfame",
+      "title": "Besolfame",
+      "edition_label": "Limited Edition of 50",
+      "price": 135,
+      "edition_size": 50,
+      "medium": "Giclée print on Enhanced Matte Paper",
+      "dimensions": "12 x 16 inches",
+      "artwork_slug": "besolfame",
+      "image": "assets/img/artworks/besolfame.jpg",
+      "image_alt": "Besolfame — limited-edition print adapted from the original acrylic on canvas painting by Levoy Exil (12 x 16 inches)",
+      "purchase_url": "https://zanmi-studio.myshopify.com/products/PLACEHOLDER-besolfame-edition",
+      "blurb": "A numbered collector's edition — a Levoy Exil design adapted from the original painting.",
+      "about": [
+        "This is a fine-art print adapted from <em>Besolfame</em>, the original 12 x 16 inch acrylic on canvas by Levoy Exil — a Levoy Exil design for collectors, not the original painting. The original remains available through the gallery.",
+        "The edition is strictly limited to 50 prints. Every buyer receives a numbered digital Certificate of Authenticity (No. X of 50) by email after purchase. The print itself is unsigned and unnumbered — your edition number lives on the certificate.",
+        "Once all 50 prints are claimed, the edition is permanently retired and never reprinted."
       ]
     }
   ]
