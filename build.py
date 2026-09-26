@@ -202,6 +202,15 @@ def process_images():
                 raise SystemExit(f"MISSING artwork lifestyle image: {lsrc}")
             save_jpg(Image.open(lsrc), os.path.join(OUT, rel_art_lifestyle(a)),
                      1200, a_q)
+            # Second photo for the 31 new paintings: the classic uniform
+            # studio setting, kept alongside the varied -alt display.
+            if a["lifestyle_image"].endswith("-lifestyle-alt.jpg"):
+                csrc = os.path.join(PRODUCTS_SRC, f'{a["slug"]}-lifestyle.jpg')
+                if os.path.exists(csrc):
+                    save_jpg(Image.open(csrc),
+                             os.path.join(OUT, "assets", "img", "artworks",
+                                          f'{a["slug"]}-lifestyle.jpg'),
+                             1200, a_q)
     n_life = sum(1 for a in CFG["artworks"] if a.get("lifestyle_image"))
     print(f"  {len(CFG['artworks'])} artworks x2 sizes + {n_life} lifestyle photos")
     n_gal = 0
@@ -1013,8 +1022,19 @@ def build_artwork(a, prev_a, next_a):
     if next_a:
         nav.append(f'<a class="btn btn--outline" href="/artwork/{next_a["slug"]}/">{esc(next_a["title"])} \u2192</a>')
     lifestyle = ""
+    # Second photo: the classic uniform studio setting (only for the 31 new
+    # paintings, which also have a varied -alt display as third photo).
+    li = a.get("lifestyle_image") or ""
+    if li.endswith("-lifestyle-alt.jpg"):
+        classic_src = os.path.join(PRODUCTS_SRC, f'{a["slug"]}-lifestyle.jpg')
+        if os.path.exists(classic_src):
+            lifestyle += (f'<figure class="artwork-lifestyle">'
+                         f'<img src="/assets/img/artworks/{a["slug"]}-lifestyle.jpg" loading="lazy" '
+                         f'alt="{esc(a["title"])} by {esc(ARTIST["name"])}, shown in the signature studio setting">'
+                         f'<figcaption>The signature studio setting</figcaption>'
+                         f'</figure>')
     if a.get("lifestyle_image"):
-        lifestyle = (f'<figure class="artwork-lifestyle">'
+        lifestyle += (f'<figure class="artwork-lifestyle">'
                      f'<img src="/{rel_art_lifestyle(a)}" loading="lazy" '
                      f'alt="{esc(a["title"])} by {esc(ARTIST["name"])}, shown framed in a home setting">'
                      f'<figcaption>In your home — a framed display of <em>{esc(a["title"])}</em></figcaption>'
