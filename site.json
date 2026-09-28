@@ -2,14 +2,14 @@
   "artist": {
     "name": "Levoy Exil",
     "tagline": "Renowned Haitian Painter",
-    "born": "October 19, 1944",
+    "born": "1944",
     "birthplace": "Soissons-la-Montagne Fermathe, Haiti",
     "movement": "Saint Soleil",
     "portrait": "assets/img/site/portrait.jpg",
     "portrait_alt": "Portrait of Haitian painter Levoy Exil",
     "bio_heading": "About the Artist",
     "bio": [
-      "Levoy Exil, born on October 19, 1944, in Soissons-la-Montagne Fermathe, is a celebrated Haitian artist known for his pivotal role in the Saint Soleil art movement. Beginning his artistic journey in 1972, he joined the Saint Soleil workshops initiated by the renowned artist Tiga in 1973. This groundbreaking experiment empowered mountain-dwelling peasants with no prior exposure to art to explore spirituality and creativity, garnering international attention.",
+      "Levoy Exil, born in 1944, in Soissons-la-Montagne Fermathe, is a celebrated Haitian artist known for his pivotal role in the Saint Soleil art movement. Beginning his artistic journey in 1972, he joined the Saint Soleil workshops initiated by the renowned artist Tiga in 1973. This groundbreaking experiment empowered mountain-dwelling peasants with no prior exposure to art to explore spirituality and creativity, garnering international attention.",
       "In 1975, the influential French novelist and art historian André Malraux visited Saint Soleil, recognizing the artists as conduits for spiritual expression. He dedicated a chapter in his final book, “L’Intemporel,” to the Saint Soleil movement, featuring Levoy Exil’s artwork on the cover. Exil actively participated in Saint Soleil exhibits, collaborated on a homage to Malraux, and showcased his work at the World Theater Festival in Nancy, France in 1977.",
       "Exil’s artistic career transcended borders, captivating audiences worldwide. His art delves deep into Haitian heritage and spirituality, drawing inspiration from Voodoo spirits and vivid dreams. Using Pointillism, he created intricate compositions pulsating with images of Voodoo Loas, celestial bodies, and avian creatures, all infused with rhythmic spirituality. Each brushstroke weaves a narrative of eyes, limbs, hair, and serpentine forms, evoking mystical, abstract energy.",
       "Characterized by vibrant colors and poetic calligraphy, Exil’s uninhibited style transcends traditional boundaries, evoking powerful emotional responses from collectors and enthusiasts globally. Levoy Exil’s enduring legacy testifies to the fusion of art, spirituality, and cultural identity. His art stands as an everlasting heritage, inspiring artists and admirers worldwide. In 2023, Levoy Exil’s masterpiece “Solrou: The Sun’s creates Unity” served as a profound wellspring of inspiration, giving rise to Gabriela Hearst’s luxurious Spring Summer 2024 collection."
@@ -479,7 +479,7 @@
       },
       {
         "type": "html",
-        "html": "<section class=\"section\" id=\"newsletter\"><div class=\"wrap\"><div class=\"nl-card\"><p class=\"eyebrow\">Newsletter</p><h2>Never miss a new painting</h2><p class=\"lead\">New originals, exhibitions, and stories from Levoy’s studio — straight to your inbox. One email now and then, never spam.</p><form class=\"nl-form\" action=\"https://formsubmit.co/levoyexilgallery@gmail.com\" method=\"POST\"><input type=\"email\" name=\"email\" class=\"nl-input\" placeholder=\"Your email address\" required aria-label=\"Email address\"><input type=\"text\" name=\"_honey\" style=\"display:none\" tabindex=\"-1\" autocomplete=\"off\"><input type=\"hidden\" name=\"_subject\" value=\"New newsletter signup — levoyexil.com\"><input type=\"hidden\" name=\"_captcha\" value=\"false\"><input type=\"hidden\" name=\"_template\" value=\"table\"><input type=\"hidden\" name=\"_next\" value=\"https://levoyexil.com/newsletter-thanks/\"><button type=\"submit\" class=\"btn btn--primary\">Subscribe</button></form><p class=\"nl-note\">We only use your email for the newsletter. Unsubscribe anytime.</p></div></div></section>"
+        "html": "<section class=\"section\" id=\"newsletter\"><div class=\"wrap\"><div class=\"nl-card\"><p class=\"eyebrow\">Newsletter</p><h2>Never miss a new painting</h2><p class=\"lead\">New originals, exhibitions, and stories from Levoy’s studio — straight to your inbox. One email now and then, never spam.</p><script async data-uid=\"070dcab38b\" src=\"https://levoy-exil.kit.com/070dcab38b/index.js\"></script><p class=\"nl-note\">We only use your email for the newsletter. Unsubscribe anytime.</p></div></div></section>"
       },
       {
         "type": "contact"
@@ -514,7 +514,7 @@
           {
             "h2": "Who he is"
           },
-          "Levoy Exil was born on October 19, 1944, in Soissons-la-Montagne Fermathe, Haiti — a village in the mountains above Port-au-Prince where the spirit world was never far from daily life. He began painting in 1972, and a year later joined the Saint Soleil workshops founded by the artist Tiga (Jean-Claude Garoute) — a radical experiment that put brushes in the hands of mountain-dwelling farmers with no prior exposure to art and invited them to paint what they saw in dreams and in the Vodou spirits around them.",
+          "Levoy Exil was born in 1944 in Soissons-la-Montagne Fermathe, Haiti — a village in the mountains above Port-au-Prince where the spirit world was never far from daily life. He began painting in 1972, and a year later joined the Saint Soleil workshops founded by the artist Tiga (Jean-Claude Garoute) — a radical experiment that put brushes in the hands of mountain-dwelling farmers with no prior exposure to art and invited them to paint what they saw in dreams and in the Vodou spirits around them.",
           {
             "h2": "The Malraux visit"
           },
@@ -1156,7 +1156,7 @@
     "items": [
       {
         "q": "Who is Levoy Exil?",
-        "a": "Levoy Exil (born October 19, 1944, in Soissons-la-Montagne Fermathe, Haiti) is a renowned Haitian painter and a pivotal figure of the Saint Soleil art movement, which he joined in 1973. His work is held in collections worldwide and has been exhibited across Haiti, the Americas, and Europe for five decades."
+        "a": "Levoy Exil (born 1944, in Soissons-la-Montagne Fermathe, Haiti) is a renowned Haitian painter and a pivotal figure of the Saint Soleil art movement, which he joined in 1973. His work is held in collections worldwide and has been exhibited across Haiti, the Americas, and Europe for five decades."
       },
       {
         "q": "What is the Saint Soleil movement?",
