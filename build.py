@@ -82,7 +82,7 @@ def fmt_date(iso):
 
 def wa_artwork(title, price):
     text = (f"Hello {ARTIST['name']} Gallery! I'm interested in the original "
-            f"painting \u201c{title}\u201d by {ARTIST['name']} ({money(price)}). "
+            f"painting \u201c{title}\u201d by {ARTIST['name']}. "
             f"Could you share more details?")
     return f"{CONTACT['whatsapp_base']}&text={quote(text)}"
 
@@ -90,7 +90,7 @@ def wa_artwork(title, price):
 def mail_artwork(title, price):
     subject = f"Enquiry about \u201c{title}\u201d by {ARTIST['name']}"
     body = (f"Hello,\n\nI'm interested in the original painting \u201c{title}\u201d "
-            f"by {ARTIST['name']} ({money(price)}).\n\nCould you please share more details?\n\nThank you.")
+            f"by {ARTIST['name']}.\n\nCould you please share more details?\n\nThank you.")
     return f"mailto:{CONTACT['email']}?subject={quote(subject)}&body={quote(body)}"
 
 
@@ -98,6 +98,19 @@ def wa_general():
     text = (f"Hello {ARTIST['name']} Gallery! I'd like to enquire about an "
             f"original painting.")
     return f"{CONTACT['whatsapp_base']}&text={quote(text)}"
+
+
+def wa_edition(title, label):
+    text = (f"Hello {ARTIST['name']} Gallery! I'm interested in the limited edition "
+            f"{title} \u2014 {label}. Could you share more details?")
+    return f"{CONTACT['whatsapp_base']}&text={quote(text)}"
+
+
+def mail_edition(title, label):
+    subject = f"Enquiry about {title} \u2014 {label}"
+    body = (f"Hello,\n\nI'm interested in the limited edition {title} \u2014 {label}.\n\n"
+            f"Could you please share more details?\n\nThank you.")
+    return f"mailto:{CONTACT['email']}?subject={quote(subject)}&body={quote(body)}"
 
 
 def art_alt(a):
@@ -424,7 +437,7 @@ def card_html(a):
 <div class="card-body">
 <h3 class="card-title">{esc(a['title'])}</h3>
 <p class="card-meta">{esc(a['medium'])} \u00b7 {esc(a['dimensions'])}</p>
-<div class="card-foot"><span class="price">{money(a['price'])}</span><span class="badge badge--{avail}">{badge}</span></div>
+<div class="card-foot"><span class="badge badge--{avail}">{badge}</span></div>
 </div></a>"""
 
 
@@ -495,7 +508,7 @@ def sec_studio_products(sec):
 <div class="card-media"><img src="/{esc(p['image'])}" alt="{esc(p.get('image_alt', p['name']))}" loading="lazy"></div>
 <div class="card-body">
 <h3 class="card-title">{esc(p['name'])}</h3>
-<div class="card-foot"><span class="price">{money(p['price'])}</span><span class="shop-link">Shop at {esc(STUDIO['name'])} \u2192</span></div>
+<div class="card-foot"><span class="shop-link">Shop at {esc(STUDIO['name'])} \u2192</span></div>
 </div></a>""")
     return f"""<section class="section" data-products-showcase><div class="wrap">
 <div class="center"><p class="eyebrow">{esc(STUDIO['name'])}</p><h2>{esc(STUDIO['products_heading'])}</h2>
@@ -998,8 +1011,6 @@ def artwork_jsonld(a, path):
         "url": BASE + path,
         "offers": {
             "@type": "Offer",
-            "price": a["price"],
-            "priceCurrency": "USD",
             "availability": avail,
         },
     }
@@ -1069,7 +1080,6 @@ def build_artwork(a, prev_a, next_a):
 <p class="eyebrow">Original painting</p>
 <h1>{esc(a['title'])}</h1>
 <p class="lead">by {esc(ARTIST['name'])}</p>
-<p class="price" style="font-size:1.6rem">{money(a['price'])}</p>
 <div class="artwork-status"><span class="badge badge--{avail}">{badge}</span></div>
 <table class="spec-table">
 <tr><th>Medium</th><td>{esc(a['medium'])}</td></tr>
@@ -1091,7 +1101,7 @@ def build_artwork(a, prev_a, next_a):
 <div class="artwork-nav">{''.join(nav)}</div>
 </section></div>"""
     desc = (f"{a['title']}: an original Haitian {a['medium'].lower()} painting "
-            f"({a['dimensions']}) by {ARTIST['name']}, {money(a['price'])}. "
+            f"({a['dimensions']}) by {ARTIST['name']}. "
             f"Enquire directly via WhatsApp or email.")
     write_page(path, f"{a['title']} \u2014 Original Haitian Painting by {ARTIST['name']}",
                desc, body, active="/gallery/", og_image=rel_art_img(a),
@@ -1117,8 +1127,6 @@ def edition_jsonld(e, path):
         "brand": {"@type": "Brand", "name": STUDIO["name"]},
         "offers": {
             "@type": "Offer",
-            "price": e["price"],
-            "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
         },
     }
@@ -1132,7 +1140,7 @@ def edition_card_html(e):
 <div class="card-body">
 <h3 class="card-title">{esc(e['title'])} \u2014 {esc(e['edition_label'])}</h3>
 <p class="card-meta">Numbered edition of {e['edition_size']} \u00b7 {esc(e['dimensions'])}</p>
-<div class="card-foot"><span class="price">{money(e['price'])}</span><span class="badge badge--in">Available</span></div>
+<div class="card-foot"><span class="badge badge--in">Available</span></div>
 </div></a>"""
 
 
@@ -1164,7 +1172,6 @@ def build_edition(e):
 <p class="eyebrow">Collector edition</p>
 <h1>{esc(e['title'])} \u2014 {esc(e['edition_label'])}</h1>
 <p class="lead">{esc(e['blurb'])}</p>
-<p class="price" style="font-size:1.6rem">{money(e['price'])}</p>
 <div class="artwork-status"><span class="badge badge--in">Available \u2014 edition of {e['edition_size']}</span></div>
 <table class="spec-table">
 <tr><th>Edition</th><td>Numbered edition of {e['edition_size']}</td></tr>
@@ -1174,10 +1181,11 @@ def build_edition(e):
 <tr><th>Certificate</th><td>Numbered digital Certificate of Authenticity (No. X of {e['edition_size']}), emailed after purchase</td></tr>
 </table>
 <div class="enquiry-box">
-<h2>Purchase this edition</h2>
-<p>Sold through the {esc(STUDIO['name'])} shop \u2014 your purchase opens the Studio store, where the edition is fulfilled and your numbered certificate is issued.</p>
+<h2>Enquire about this edition</h2>
+<p>Every edition is arranged personally \u2014 message the gallery and we\u2019ll confirm availability and next steps.</p>
 <div class="btn-row">
-<a class="btn btn--primary" href="{esc(e['purchase_url'])}">Purchase \u2014 {money(e['price'])}</a>
+<a class="btn btn--whatsapp" href="{esc(wa_edition(e['title'], e['edition_label']))}">WhatsApp us</a>
+<a class="btn btn--outline" href="{esc(mail_edition(e['title'], e['edition_label']))}">Email the gallery</a>
 <a class="btn btn--outline" href="/artwork/{esc(e['artwork_slug'])}/">See the original painting</a>
 </div>
 </div>
@@ -1190,7 +1198,7 @@ def build_edition(e):
 </section></div>"""
     desc = (f"{e['title']} \u2014 {e['edition_label']}: a numbered "
             f"limited-edition print ({e['dimensions']}) adapted from the "
-            f"original painting by {ARTIST['name']}, {money(e['price'])}. "
+            f"original painting by {ARTIST['name']}. "
             f"Numbered certificate emailed after purchase; retired at sellout.")
     write_page(path, f"{e['title']} \u2014 {e['edition_label']} by {ARTIST['name']}",
                desc, body, active="/editions/", og_image=e["image"],
@@ -1317,7 +1325,7 @@ def write_llms_txt():
     ed_lines = []
     for e in CFG.get("editions", []):
         ed_lines.append(
-            f"- {e['title']} \u2014 {e['edition_label']} ({money(e['price'])}): "
+            f"- {e['title']} \u2014 {e['edition_label']}: "
             f"{BASE}/editions/{e['slug']}/")
     if ed_lines:
         idx = lines.index("## Official links")
