@@ -237,6 +237,7 @@ a.press-item:hover img { filter: none; transform: scale(1.04); }
 .article-figure a img { transition: transform .25s ease; }
 .article-figure a:hover img { transform: scale(1.01); }
 .article-figure figcaption { font-size: .85rem; opacity: .7; margin-top: .6rem; text-align: center; }
+.article-subscribe { margin-top: 2.5rem; }
 
 /* ---------- Breadcrumbs ---------- */
 .crumbs { padding-top: 1.6rem; font-size: .9rem; }

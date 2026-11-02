@@ -973,6 +973,14 @@ def build_article(a):
                if a.get("teaser") else "")
             + hero
             + paras
+            + ('<div class="article-subscribe">'
+               '<h2>Enjoyed this story?</h2>'
+               "<p>Subscribe to Levoy's newsletter for more stories like this. "
+               'One email now and then, never spam.</p>'
+               '<script async data-uid="070dcab38b" '
+               'src="https://levoy-exil.kit.com/070dcab38b/index.js"></script>'
+               '<p class="nl-note">We only use your email for the newsletter. '
+               'Unsubscribe anytime.</p></div>')
             + f'<p><a href="/news/">← All stories</a></p>'
             f'</section></div>')
     write_page(path, f"{a['title']} — {ARTIST['name']}",
